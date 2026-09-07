@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* ─── Tailwind v4 Theme Tokens ──────────────────────────────── */
+@theme {
+  /* Brand palette */
+  --color-brand-night:      #08130e;
+  --color-brand-forest:     #0c1d15;
+  --color-brand-deep:       #06110c;
+  --color-brand-surface:    #11221a;
+  --color-brand-card:       #16281f;
+  --color-brand-emerald:    #008060;
+  --color-brand-lime:       #95bf47;
+  --color-brand-brightlime: #9bc43f;
+  --color-brand-accent:     #a3e635;
+  --color-brand-border:     #1f382b;
+
+  /* Fonts — next/font variables from layout.tsx */
+  --font-sans:  var(--font-manrope), system-ui, sans-serif;
+  --font-body:  var(--font-inter), system-ui, sans-serif;
+}
+
+/* ─── Base Reset ────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fbfdfc;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #95bf47;
+  color: #000;
+}
+
+/* ─── Hero ambient overlay ──────────────────────────────────── */
+.hero-ambient-mask {
+  background: linear-gradient(
+    135deg,
+    rgba(8, 19, 14, 0.93) 0%,
+    rgba(10, 24, 18, 0.88) 50%,
+    rgba(8, 19, 14, 0.96) 100%
+  );
+}
+
+/* ─── Card gradient ─────────────────────────────────────────── */
+.card-gradient-forest {
+  background: linear-gradient(180deg, #16281f 0%, #0d1a13 100%);
+}
+
+/* ─── Hide native details marker ────────────────────────────── */
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary {
+  list-style: none;
+}
+
+/* ─── Sell Anything marquee ─────────────────────────────────── */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Core Solutions float ─────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ─── Portfolio marquee rows ───────────────────────────────── */
+@keyframes marquee-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-left {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-right {
+  animation: marquee-right 35s linear infinite;
+}
+.animate-marquee-left {
+  animation: marquee-left 35s linear infinite;
+}
