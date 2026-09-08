@@ -13,7 +13,7 @@ const features = [
 
 export default function ExpandReach() {
   return (
-    <section className="bg-white py-16 sm:py-24 lg:py-32">
+    <section className="bg-white pt-16 pb-8 sm:pt-24 sm:pb-8 lg:pt-32 lg:pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
@@ -22,7 +22,7 @@ export default function ExpandReach() {
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight leading-[1.2]">
               <span className="text-[#1a1a1a]">Expand Your Reach with</span>
               <br />
-              <span className="text-[#6cc24a]">
+              <span className="text-[#59DFAB]">
                 Expert Shopify E-Commerce Services
               </span>
             </h2>

@@ -23,7 +23,7 @@ const row2 = [
 export default function PortfolioShowcase() {
   return (
     <section
-      className="py-16 bg-[#0f1a2e] overflow-hidden"
+      className="py-16 bg-[#292f40] overflow-hidden"
       aria-labelledby="portfolio-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
@@ -32,7 +32,7 @@ export default function PortfolioShowcase() {
           className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight"
         >
           Check Out the{" "}
-          <span className="text-[#8BC53F]">E-Commerce Work We&apos;re Proud</span>{" "}
+          <span className="text-[#59DFAB]">E-Commerce Work We&apos;re Proud</span>{" "}
           of
         </h2>
         <p className="mt-3 text-sm sm:text-base text-slate-300">

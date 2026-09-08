@@ -64,7 +64,7 @@ export default function SellAnything() {
         {/* Heading */}
         <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
           <span className="text-[#08130e]">Sell Anything. </span>
-          <span className="text-[#8BC53F]">Make Profit.</span>
+          <span className="text-[#59DFAB]">Make Profit.</span>
         </h2>
 
         {/* Subtitle */}

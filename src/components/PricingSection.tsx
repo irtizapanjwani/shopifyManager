@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 interface PricingTier {
@@ -35,6 +36,7 @@ const ecommercePlans: PricingTier[] = [
     price: "$599",
     originalPrice: "$1198",
     badge: "bestseller",
+    featured: true,
     features: [
       "Customized Design",
       "Up-To 50 Products",
@@ -51,7 +53,6 @@ const ecommercePlans: PricingTier[] = [
     price: "$999",
     originalPrice: "$1998",
     badge: "toprated",
-    featured: true,
     features: [
       "Customized Design",
       "Up-To 75 Products",
@@ -60,6 +61,50 @@ const ecommercePlans: PricingTier[] = [
       "Easy Product Search",
       "Dedicated Designer & Developer",
       "Unlimited Revisions",
+    ],
+  },
+  {
+    name: "Pro Shopify",
+    description: "Build Shopify store easily with our professional services.",
+    price: "$1499",
+    originalPrice: "$2998",
+    features: [
+      "Customized Design",
+      "Up-To 125 Products",
+      "Full Shopping Cart Integration",
+      "Payment Module Integration",
+      "Easy Product Search",
+      "Product Reviews",
+      "Blog Page",
+    ],
+  },
+  {
+    name: "Executive Shopify",
+    description: "Effortlessly set up Shopify store with the help of our experts.",
+    price: "$2499",
+    originalPrice: "$4998",
+    features: [
+      "Unlimited Pages Website with Unique Design",
+      "5 Custom Logo Design",
+      "Up-to 250 products",
+      "FREE Unlimited Revisions",
+      "Custom Shopping Cart Integration",
+      "Multiple Payment Module Integration",
+      "Navegational and Search Optimisation",
+    ],
+  },
+  {
+    name: "Top Tier Shopify",
+    description: "Maximize your potential with our expert Shopify store design services.",
+    price: "$4999",
+    originalPrice: "$9998",
+    features: [
+      "Complete Custom Design & Development",
+      "Unique, User-Friendly, Interactive, Dynamic, High-End UI Design",
+      "Up-to 500 products (Option To Scale)",
+      "Unlimited Banner Designs",
+      "Interactive Sliding Banners",
+      "Special Hover Effects",
     ],
   },
 ];
@@ -200,34 +245,28 @@ const essentialFeatures = [
 ];
 
 function BadgeRibbon({ type }: { type: "bestseller" | "toprated" }) {
-  const label = type === "bestseller" ? "BEST SELLER" : "TOP RATED";
   return (
-    <div className="absolute -top-1 -right-1 z-10">
-      <div className="relative">
-        <svg viewBox="0 0 80 90" className="w-16 h-18 sm:w-20 sm:h-22">
-          {/* Ribbon tails */}
-          <polygon points="25,60 35,90 40,75 45,90 55,60" fill="#d4a843"/>
-          <polygon points="30,58 38,85 40,70 42,85 50,58" fill="#c49a38"/>
-          {/* Badge circle */}
-          <circle cx="40" cy="35" r="28" fill="#1a1a1a" stroke="#d4a843" strokeWidth="2"/>
-          <circle cx="40" cy="35" r="22" fill="none" stroke="#d4a843" strokeWidth="1" strokeDasharray="3 2"/>
-          <text x="40" y="32" textAnchor="middle" fill="#d4a843" fontSize="7" fontWeight="bold">{label.split(" ")[0]}</text>
-          <text x="40" y="42" textAnchor="middle" fill="#d4a843" fontSize="7" fontWeight="bold">{label.split(" ")[1]}</text>
-          <text x="40" y="52" textAnchor="middle" fill="#d4a843" fontSize="5">★★★</text>
-        </svg>
-      </div>
+    <div className="absolute -top-6 right-5 z-10">
+      <Image
+        src={`/Shopify Launchpad Images/${type === "toprated" ? "toprated-seal" : "bestseller-seal"}.webp`}
+        alt={type === "toprated" ? "Top rated" : "Best seller"}
+        width={72}
+        height={72}
+        className="w-16 sm:w-[72px] h-auto"
+      />
     </div>
   );
 }
 
 export default function PricingSection() {
   const [activeTab, setActiveTab] = useState<PlanTab>("E-Commerce");
+  const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
   const plans = planData[activeTab];
 
   return (
     <section
       id="pricing"
-      className="py-20 bg-white"
+      className="py-20 bg-[#f5f6f7]"
       aria-labelledby="pricing-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -236,7 +275,7 @@ export default function PricingSection() {
             id="pricing-heading"
             className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
           >
-            E-Commerce Shopify Pricing Plans
+            E-Commerce Shopify <span className="text-[#58DDB0]">Pricing Plans</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-500">
             Looking for affordable Shopify options? Invest now for the growth and success of your business.
@@ -247,10 +286,13 @@ export default function PricingSection() {
             {tabs.map((tab) => (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => {
+                  setActiveTab(tab);
+                  setHoveredPlan(null);
+                }}
                 className={`px-8 py-3 rounded-full text-sm font-bold border-2 transition-all ${
                   activeTab === tab
-                    ? "bg-[#8BC53F] border-[#8BC53F] text-white"
+                    ? "bg-[#58DDB0] border-[#58DDB0] text-white"
                     : "bg-white border-slate-300 text-slate-600 hover:border-slate-400"
                 }`}
               >
@@ -261,14 +303,21 @@ export default function PricingSection() {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8 items-start">
-          {plans.map((plan) => (
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          {plans.map((plan) => {
+            const isHighlighted = hoveredPlan
+              ? hoveredPlan === plan.name
+              : Boolean(plan.featured);
+
+            return (
             <div
               key={plan.name}
-              className={`group rounded-2xl p-8 flex flex-col justify-between relative transition-all duration-300 ${
-                plan.featured
-                  ? "bg-white border-2 border-[#8BC53F] shadow-sm hover:bg-[#8BC53F] hover:shadow-xl lg:-translate-y-2"
-                  : "bg-white border border-slate-200 shadow-sm hover:border-[#8BC53F] hover:bg-[#8BC53F] hover:shadow-xl"
+              onMouseEnter={() => setHoveredPlan(plan.name)}
+              onMouseLeave={() => setHoveredPlan(null)}
+              className={`rounded-xl p-7 lg:p-8 flex flex-col justify-between relative min-h-full border transition-all duration-300 ${
+                isHighlighted
+                  ? "bg-[#58DDB0] border-[#58DDB0] text-white shadow-lg lg:-translate-y-3"
+                  : "bg-white border-slate-200 shadow-sm"
               }`}
             >
               {plan.badge && <BadgeRibbon type={plan.badge} />}
@@ -276,23 +325,27 @@ export default function PricingSection() {
               <div>
                 <h3
                   className={`text-2xl font-black ${
-                    plan.featured ? "text-slate-900 group-hover:text-white" : "text-slate-900 group-hover:text-white"
+                    isHighlighted ? "text-white" : "text-slate-900"
                   }`}
                 >
                   {plan.name}
                 </h3>
                 <p
                   className={`text-sm mt-1 ${
-                    plan.featured ? "text-slate-500 group-hover:text-white/80" : "text-slate-500 group-hover:text-white/80"
+                    isHighlighted ? "text-white/90" : "text-slate-500"
                   }`}
                 >
                   {plan.description}
                 </p>
 
-                <div className="mt-5 mb-6 flex items-baseline gap-2">
+                <div
+                  className={`mt-5 mb-6 inline-flex items-baseline gap-2 rounded-r-full px-5 py-2.5 ${
+                    isHighlighted ? "bg-white" : "bg-slate-100"
+                  }`}
+                >
                   <span
                     className={`text-4xl font-black ${
-                      plan.featured ? "text-slate-900 group-hover:text-white" : "text-slate-900 group-hover:text-white"
+                      isHighlighted ? "text-[#58DDB0]" : "text-slate-700"
                     }`}
                   >
                     {plan.price}
@@ -300,7 +353,7 @@ export default function PricingSection() {
                   {plan.priceNote && (
                     <span
                       className={`text-sm font-semibold ${
-                        plan.featured ? "text-slate-500 group-hover:text-white/70" : "text-slate-500 group-hover:text-white/70"
+                        isHighlighted ? "text-[#58DDB0]/80" : "text-slate-500"
                       }`}
                     >
                       {plan.priceNote}
@@ -308,26 +361,32 @@ export default function PricingSection() {
                   )}
                   <span
                     className={`text-lg font-semibold line-through ${
-                      plan.featured ? "text-slate-400 group-hover:text-white/50" : "text-slate-400 group-hover:text-white/50"
+                        isHighlighted ? "text-slate-300" : "text-slate-400"
                     }`}
                   >
                     {plan.originalPrice}
                   </span>
                 </div>
 
-                <ul className="space-y-3 text-sm">
+                <ul
+                  className={`space-y-3 text-sm ${
+                    activeTab === "E-Commerce"
+                      ? "max-h-[300px] overflow-y-auto pr-2"
+                      : ""
+                  }`}
+                >
                   {plan.features.map((f) => (
                     <li
                       key={f}
                       className={`flex items-center gap-2.5 ${
-                        plan.featured ? "text-slate-600 group-hover:text-white/90" : "text-slate-600 group-hover:text-white/90"
+                        isHighlighted ? "text-white" : "text-slate-600"
                       }`}
                     >
                       <span
                         className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
-                          plan.featured
-                            ? "bg-[#8BC53F] text-white group-hover:bg-white group-hover:text-[#8BC53F]"
-                            : "bg-[#8BC53F] text-white group-hover:bg-white group-hover:text-[#8BC53F]"
+                          isHighlighted
+                            ? "bg-white text-[#58DDB0]"
+                            : "bg-[#58DDB0] text-white"
                         }`}
                       >
                         ✓
@@ -342,9 +401,9 @@ export default function PricingSection() {
                 <Link
                   href="/#contact"
                   className={`flex-1 text-center py-3 rounded-full text-sm font-bold transition-colors ${
-                    plan.featured
-                      ? "bg-[#8BC53F] text-white group-hover:bg-white group-hover:text-[#8BC53F]"
-                      : "bg-[#8BC53F] text-white group-hover:bg-white group-hover:text-[#8BC53F]"
+                    isHighlighted
+                      ? "border-2 border-white bg-transparent text-white"
+                      : "bg-[#58DDB0] text-white"
                   }`}
                 >
                   Get Started
@@ -352,16 +411,34 @@ export default function PricingSection() {
                 <Link
                   href="/#contact"
                   className={`flex-1 text-center py-3 rounded-full text-sm font-bold border-2 transition-colors ${
-                    plan.featured
-                      ? "border-slate-300 text-slate-600 group-hover:border-white group-hover:text-white"
-                      : "border-slate-300 text-slate-600 group-hover:border-white group-hover:text-white"
+                    isHighlighted
+                      ? "border-white bg-white text-[#08130e]"
+                      : "border-slate-100 bg-white text-[#08130e]"
                   }`}
                 >
-                  Chat Now
+                  <span className="inline-flex items-center justify-center gap-1.5">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-4 h-4 fill-current"
+                      aria-hidden="true"
+                    >
+                      <path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
+                    </svg>
+                    Chat Now
+                  </span>
                 </Link>
               </div>
+              <Link
+                href="/#contact"
+                className={`mt-7 text-center text-sm font-semibold underline underline-offset-4 transition-colors ${
+                  isHighlighted ? "text-white" : "text-slate-900"
+                }`}
+              >
+                View Details
+              </Link>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Essential Features */}
@@ -369,7 +446,7 @@ export default function PricingSection() {
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Essential Features Included in{" "}
-              <span className="text-[#8BC53F]">E-Commerce Shopify Plan</span>
+              <span className="text-[#58DDB0]">E-Commerce Shopify Plan</span>
             </h3>
             <p className="mt-3 text-sm sm:text-base text-slate-500">
               Are you looking to scale up your Shopify business? We offer all-inclusive Shopify features that deliver long-term value for your business.

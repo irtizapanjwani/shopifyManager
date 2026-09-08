@@ -19,8 +19,8 @@ const pillars: Pillar[] = [
     number: "01",
     title: "We Build It.",
     body: "Building stores that lead customers down the sales funnel. We specialize in crafting expert Shopify solutions that have engaging visual appeal, prioritize user experience, and are highly functional. If you're looking to convert visitors into customers, get a conversion-driven store today!",
-    imageSrc: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=900&fit=crop&auto=format&q=80",
-    imageAlt: "Online shop concept with digital shopping cart and e-commerce elements",
+    imageSrc: "/Shopify Launchpad Images/promoteit.png",
+    imageAlt: "Shopify promotion and marketing",
   },
   {
     id: "promote",
@@ -66,19 +66,19 @@ export default function ThreePillars() {
                 >
                   <button
                     type="button"
-                    className="w-full text-left flex items-baseline gap-2 py-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8BC53F] rounded"
+                    className="w-full text-left flex items-baseline gap-2 py-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#59DFAB] rounded"
                     aria-expanded={isActive}
                   >
                     <span
-                      className={`text-2xl sm:text-3xl lg:text-4xl font-bold transition-colors duration-300 ${
+                        className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold transition-colors duration-300 ${
                         isActive ? "text-[#08130e]" : "text-slate-300"
                       }`}
                     >
                       We
                     </span>
                     <span
-                      className={`text-2xl sm:text-3xl lg:text-4xl font-bold transition-colors duration-300 ${
-                        isActive ? "text-[#8BC53F]" : "text-slate-300"
+                        className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold transition-colors duration-300 ${
+                        isActive ? "text-[#59DFAB]" : "text-slate-300"
                       }`}
                     >
                       {p.title.replace("We ", "")}
@@ -104,7 +104,7 @@ export default function ThreePillars() {
                     </p>
                     <Link
                       href="/#contact"
-                      className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#8BC53F] text-white text-sm font-bold hover:bg-[#7ab035] transition-colors"
+                      className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#59DFAB] text-white text-sm font-bold hover:bg-[#59DFAB] hover:opacity-90 transition-colors"
                     >
                       Learn More
                     </Link>
@@ -115,10 +115,10 @@ export default function ThreePillars() {
           </div>
 
           {/* Right: Image */}
-          <div className="relative w-full max-w-md mx-auto aspect-square rounded-2xl overflow-hidden lg:max-w-lg">
+          <div className="relative w-full max-w-sm mx-auto aspect-square rounded-2xl overflow-hidden lg:max-w-md">
             <Image
-              src={pillars.find((p) => p.id === activeId)?.imageSrc ?? pillars[2].imageSrc}
-              alt={pillars.find((p) => p.id === activeId)?.imageAlt ?? pillars[2].imageAlt}
+              src="/Shopify Launchpad Images/promoteit.png"
+              alt="Shopify promotion and marketing"
               fill
               className="object-cover transition-opacity duration-500"
               sizes="(max-width: 1024px) 100vw, 400px"

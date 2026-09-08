@@ -93,31 +93,31 @@ export default function WhyUs() {
   return (
     <section
       id="about"
-      className="py-16 bg-[#1a1f26]"
+      className="py-20 lg:py-24 bg-[#292D3F]"
       aria-labelledby="whyus-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: heading + slide content */}
           <div className="flex flex-col justify-between">
             <div>
               <h2
                 id="whyus-heading"
-                className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight max-w-xl leading-tight"
+                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-xl leading-tight"
               >
                 Why We&apos;re the{" "}
-                <span className="text-[#8BC53F]">
+                <span className="text-[#59DFAB]">
                   Ideal E-Commerce Shopify Partner
                 </span>
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-slate-400">
+              <p className="mt-4 text-sm sm:text-base text-slate-300">
                 Growth-driven. Efficient. Seamless operations.
               </p>
             </div>
 
-            <div className="mt-10 flex gap-5">
+            <div className="mt-12 flex gap-5">
               {/* Icon */}
-              <div className="flex-shrink-0 w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-[#8BC53F] flex items-center justify-center p-5">
+              <div className="flex-shrink-0 w-24 h-24 sm:w-28 sm:h-28 bg-[#59DFAB] flex items-center justify-center p-5">
                 {s.icon}
               </div>
 
@@ -139,7 +139,7 @@ export default function WhyUs() {
                       aria-label={`Go to slide ${i + 1}`}
                       className={`w-3.5 h-3.5 rounded-full border-2 transition-all ${
                         i === active
-                          ? "bg-[#8BC53F] border-[#8BC53F]"
+                          ? "bg-[#59DFAB] border-[#59DFAB]"
                           : "bg-transparent border-slate-400 hover:border-slate-600"
                       }`}
                     />
@@ -149,13 +149,14 @@ export default function WhyUs() {
             </div>
           </div>
 
-          {/* Right: image — full height */}
-          <div className="relative w-full min-h-[420px] rounded-2xl overflow-hidden">
+          {/* Right: Shopify illustration */}
+          <div className="relative w-full min-h-[360px] lg:min-h-[500px] flex items-center justify-center">
             <Image
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-              alt="Team collaborating at computers in office"
-              fill
-              className="object-cover"
+              src="/Shopify Launchpad Images/ideal.png"
+              alt="Ideal Shopify e-commerce partner illustration"
+              width={722}
+              height={652}
+              className="w-full max-w-[540px] lg:max-w-[650px] h-auto object-contain"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

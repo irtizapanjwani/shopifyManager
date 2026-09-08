@@ -40,41 +40,40 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="py-20 bg-white"
+      className="py-24 sm:py-28 bg-white"
       aria-labelledby="faq-heading"
     >
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#008060]">
-            Answers First
-          </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
           <h2
             id="faq-heading"
-            className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-medium text-slate-950 tracking-tight"
           >
-            Frequently asked questions
+            Frequently <span className="font-extrabold text-[#58DDB0]">Asked Questions</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600">
-            Practical details on timelines, migrations, and how Shopify Managers engages with your team.
+          <p className="mt-8 text-base sm:text-lg text-slate-700">
+            Have confusions? Don&apos;t worry. Check out some of the commonly asked queries.
           </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="grid md:grid-cols-2 gap-7 md:gap-x-8 md:gap-y-7">
           {faqs.map((item) => (
             <details
               key={item.question}
-              className="group rounded-2xl border border-slate-200 bg-[#f8faf9] px-5 py-4 open:bg-white open:border-[#008060]"
+              className="group bg-[#f6f7f8] px-6 py-7 sm:px-9 sm:py-8"
             >
-              <summary className="flex cursor-pointer items-center justify-between gap-4 text-left text-sm sm:text-base font-bold text-slate-900">
+              <summary className="flex cursor-pointer items-center justify-between gap-4 text-left text-lg sm:text-[22px] font-medium leading-snug text-slate-700">
                 <span className="pr-4">{item.question}</span>
-                <span
-                  className="flex-shrink-0 text-[#008060] text-xl leading-none group-open:rotate-45 transition-transform"
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-6 h-6 flex-shrink-0 stroke-current stroke-[2.5] transition-transform group-open:rotate-180"
+                  fill="none"
                   aria-hidden="true"
                 >
-                  +
-                </span>
+                  <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </summary>
-              <p className="mt-3 text-sm text-slate-600 leading-relaxed">{item.answer}</p>
+              <p className="mt-5 text-base text-slate-600 leading-relaxed">{item.answer}</p>
             </details>
           ))}
         </div>
