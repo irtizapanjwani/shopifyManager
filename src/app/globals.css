@@ -46,10 +46,11 @@ body {
 /* ─── Hero ambient overlay ──────────────────────────────────── */
 .hero-ambient-mask {
   background: linear-gradient(
-    135deg,
-    rgba(8, 19, 14, 0.93) 0%,
-    rgba(10, 24, 18, 0.88) 50%,
-    rgba(8, 19, 14, 0.96) 100%
+    to right,
+    rgba(6, 16, 11, 0.05) 0%,
+    rgba(6, 16, 11, 0.25) 35%,
+    rgba(6, 16, 11, 0.65) 60%,
+    rgba(6, 16, 11, 0.88) 100%
   );
 }
 
