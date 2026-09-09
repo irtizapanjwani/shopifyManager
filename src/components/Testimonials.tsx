@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface Testimonial {
   platform: string;
   quote: string;
@@ -21,10 +23,10 @@ const testimonials: Testimonial[] = [
     stars: 5,
   },
   {
-    platform: "google",
+    platform: "trustpilot",
     quote:
-      "Working with Shopify Launchpad has been a revelation! Their all-encompassing marketing solutions have enabled me to effectively reach and retain a broad customer base, resulting in significant growth for my business. Their services have truly exceeded my expectations!",
-    name: "Richard Issac",
+      "The fact that they were so quick in building my shopify website while charging a minimal fee for it was enough to satisfy me.",
+    name: "Amie Lynn Spies",
     stars: 5,
   },
   {
@@ -45,10 +47,10 @@ const additionalTestimonials: Testimonial[] = [
     stars: 5,
   },
   {
-    platform: "facebook",
+    platform: "trustpilot",
     quote:
-      "We're absolutely thrilled with the Shopify store that Shopify Launchpad has created for us. Their talented team of experts has truly exceeded our expectations, and we're confident that they'll do the same for you - they're a team that truly delivers!",
-    name: "Kate Oscar",
+      "I recently had the pleasure of working with a top-notch Shopify designer, and I'm thrilled with the results! From start to finish, the experience was nothing short of outstanding.",
+    name: "Michael Tannar",
     stars: 5,
   },
   {
@@ -65,26 +67,63 @@ const additionalTestimonials: Testimonial[] = [
     name: "Whitney Nathan",
     stars: 5,
   },
+  {
+    platform: "facebook",
+    quote:
+      "I worked with Matt to launch my Shopify store and couldn't be happier! He took the time to understand my vision, creating a clean, professional design that perfectly captures my brand. The development process was seamless and efficient, making the entire experience a breeze. Thanks, Matt, for a job well done!",
+    name: "Henry Mark",
+    stars: 5,
+  },
+  {
+    platform: "google",
+    quote:
+      "I'm thrilled with Shopify Launchpad! Their team exceeded my expectations, delivering a stunning store that looks amazing and drives exceptional performance. Impressed by their expertise, attention to detail, and dedication, I highly recommend them for a top-notch Shopify experience.",
+    name: "Kylie White",
+    stars: 5,
+  },
+  {
+    platform: "google",
+    quote:
+      "As a Shopify newbie, I was nervous about building an online store. But Shopify Launchpad were the perfect partner, guiding me through every stage with expert support. The process was seamless and stress-free, and my customers love the final result! I highly recommend them to anyone new to Shopify.",
+    name: "Jane Chen",
+    stars: 5,
+  },
+  {
+    platform: "facebook",
+    quote:
+      "Shopify Launchpad' e-commerce SEO services have been a game-changer for my online store, driving a 45% sales increase! Their team's expertise and customized plan exceeded my expectations. I'm thrilled with the results and highly recommend their services to anyone looking to boost online visibility and drive sales.",
+    name: "Ariana Lee",
+    stars: 5,
+  },
+  {
+    platform: "google",
+    quote:
+      "I highly recommend Shopify Launchpad for their exceptional design and development services. Their responsive, professional team delivered a tailored solution that exceeded our expectations, capturing our brand's essence and providing a seamless shopping experience. Unmatched expertise and dedication!",
+    name: "Mark Groff",
+    stars: 5,
+  },
+  {
+    platform: "google",
+    quote:
+      "I'm blown away by Shopify Launchpad' e-commerce SEO services! Their team's expertise has significantly increased our organic traffic and online reach. Their innovative, tailored strategies have exceeded my expectations. I'm impressed with their dedication to staying ahead of the curve and delivering exceptional results. Kudos to the team for a job well done!",
+    name: "David Miller",
+    stars: 5,
+  },
+  {
+    platform: "google",
+    quote:
+      "Partnering with Shopify Launchpad has been a game-changer for my online store. They've driven significant traffic and sales growth through strategic marketing campaigns, leveraging their Shopify expertise to reach new customers and boost conversions. I'm thrilled with the results and confident in their ability to fuel long-term success for my brand.",
+    name: "Amanda Rodriguez",
+    stars: 5,
+  },
+  {
+    platform: "facebook",
+    quote:
+      "I'm thrilled with Shopify Launchpad' Social Media Management service. Since partnering, our engagement has soared 45% in just a few months. Their creative content, strategic posting, and engagement tactics have resonated with our audience, driving website traffic and sales. I'm impressed and look forward to continued collaboration.",
+    name: "Tom Baker",
+    stars: 5,
+  },
 ];
-
-function FacebookLogo() {
-  return (
-    <span className="text-2xl font-black italic text-[#1877f2]">facebook</span>
-  );
-}
-
-function GoogleLogo() {
-  return (
-    <span className="text-2xl font-bold">
-      <span className="text-[#4285f4]">G</span>
-      <span className="text-[#ea4335]">o</span>
-      <span className="text-[#fbbc05]">o</span>
-      <span className="text-[#4285f4]">g</span>
-      <span className="text-[#34a853]">l</span>
-      <span className="text-[#ea4335]">e</span>
-    </span>
-  );
-}
 
 function QuoteIcon() {
   return (
@@ -108,7 +147,56 @@ function Stars({ count }: { count: number }) {
   );
 }
 
-export default function Testimonials() {
+function PlatformLogo({ platform }: { platform: string }) {
+  if (platform === "facebook") {
+    return (
+      <Image
+        src="/Shopify Launchpad Images/facebook-logo.png"
+        alt="Facebook"
+        width={120}
+        height={40}
+        className="h-8 w-auto"
+      />
+    );
+  }
+  if (platform === "trustpilot") {
+    return (
+      <span className="text-xl font-bold flex items-center gap-1">
+        <span className="text-[#00b67a] text-2xl">★</span>
+        <span className="text-[#00b67a]">Trustpilot</span>
+      </span>
+    );
+  }
+  return (
+    <Image
+      src="/Shopify Launchpad Images/google-logo.png"
+      alt="Google"
+      width={100}
+      height={34}
+      className="h-8 w-auto"
+    />
+  );
+}
+
+function TestimonialCard({ t }: { t: Testimonial }) {
+  return (
+    <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col items-center text-center transition-all duration-300 hover:border-[#46E680] hover:shadow-xl">
+      <QuoteIcon />
+      <div className="mb-4">
+        <PlatformLogo platform={t.platform} />
+      </div>
+      <p className="text-sm text-slate-600 leading-relaxed flex-1">
+        {t.quote}
+      </p>
+      <div className="mt-6">
+        <Stars count={t.stars} />
+        <div className="text-sm font-bold text-slate-900">{t.name}</div>
+      </div>
+    </div>
+  );
+}
+
+export default function Testimonials({ allTestimonials = false }: { allTestimonials?: boolean }) {
   return (
     <section
       id="testimonials"
@@ -131,43 +219,13 @@ export default function Testimonials() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col items-center text-center transition-all duration-300 hover:border-[#46E680] hover:shadow-xl"
-            >
-              <QuoteIcon />
-              <div className="mb-4">
-                {t.platform === "facebook" ? <FacebookLogo /> : <GoogleLogo />}
-              </div>
-              <p className="text-sm text-slate-600 leading-relaxed flex-1">
-                {t.quote}
-              </p>
-              <div className="mt-6">
-                <Stars count={t.stars} />
-                <div className="text-sm font-bold text-slate-900">{t.name}</div>
-              </div>
-            </div>
+            <TestimonialCard key={t.name} t={t} />
           ))}
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-          {additionalTestimonials.map((t) => (
-            <div
-              key={t.name}
-              className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col items-center text-center transition-all duration-300 hover:border-[#46E680] hover:shadow-xl"
-            >
-              <QuoteIcon />
-              <div className="mb-4">
-                {t.platform === "facebook" ? <FacebookLogo /> : <GoogleLogo />}
-              </div>
-              <p className="text-sm text-slate-600 leading-relaxed flex-1">
-                {t.quote}
-              </p>
-              <div className="mt-6">
-                <Stars count={t.stars} />
-                <div className="text-sm font-bold text-slate-900">{t.name}</div>
-              </div>
-            </div>
+          {(allTestimonials ? additionalTestimonials : additionalTestimonials.slice(0, 4)).map((t) => (
+            <TestimonialCard key={t.name} t={t} />
           ))}
         </div>
       </div>

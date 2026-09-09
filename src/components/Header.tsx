@@ -12,7 +12,7 @@ const navLinks = [
   { label: "Process", href: "/process" },
   { label: "Pricing", href: "/pricing" },
   { label: "FAQs", href: "/faq" },
-  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Testimonials", href: "/testimonials" },
 ] as const;
 
 const serviceLinks = [
@@ -74,7 +74,8 @@ export default function Header() {
                   (link.href === "/portfolio" && pathname === "/portfolio") ||
                   (link.href === "/process" && pathname === "/process") ||
                   (link.href === "/pricing" && pathname === "/pricing") ||
-                  (link.href === "/faq" && pathname === "/faq")
+                  (link.href === "/faq" && pathname === "/faq") ||
+                  (link.href === "/testimonials" && pathname === "/testimonials")
                     ? "text-[#59DFAB]"
                     : "hover:text-[#9bc43f]"
                 }`}
@@ -116,7 +117,8 @@ export default function Header() {
                 (link.href === "/portfolio" && pathname === "/portfolio") ||
                 (link.href === "/process" && pathname === "/process") ||
                 (link.href === "/pricing" && pathname === "/pricing") ||
-                (link.href === "/faq" && pathname === "/faq")
+                (link.href === "/faq" && pathname === "/faq") ||
+                (link.href === "/testimonials" && pathname === "/testimonials")
                   ? "text-[#59DFAB] bg-[#162a20]"
                   : "text-white hover:bg-[#162a20] hover:text-[#9bc43f]"
               }`}
