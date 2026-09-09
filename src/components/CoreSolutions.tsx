@@ -32,7 +32,7 @@ export default function CoreSolutions() {
       className="py-20 bg-[#292f40]"
       aria-labelledby="solutions-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-[72px]">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2
             id="solutions-heading"

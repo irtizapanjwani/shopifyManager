@@ -35,7 +35,7 @@ const industries: Industry[] = [
 export default function IndustrySectors() {
   return (
     <section className="py-20 bg-white" aria-labelledby="industries-heading">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-[72px]">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-xs font-bold uppercase tracking-wider text-[#008060]">
             Industry Versatility

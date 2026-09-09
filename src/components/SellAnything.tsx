@@ -60,7 +60,7 @@ export default function SellAnything() {
 
   return (
     <section className="bg-white pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-[72px]">
         {/* Heading */}
         <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
           <span className="text-[#08130e]">Sell Anything. </span>

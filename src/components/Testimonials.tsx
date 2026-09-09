@@ -115,7 +115,7 @@ export default function Testimonials() {
       className="py-20 bg-[#f5f6f7]"
       aria-labelledby="testimonials-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-[72px]">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <h2
             id="testimonials-heading"

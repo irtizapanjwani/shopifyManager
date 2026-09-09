@@ -26,7 +26,7 @@ export default function PortfolioShowcase() {
       className="py-16 bg-[#292f40] overflow-hidden"
       aria-labelledby="portfolio-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+      <div className="w-full px-[72px] text-center mb-12">
         <h2
           id="portfolio-heading"
           className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight"

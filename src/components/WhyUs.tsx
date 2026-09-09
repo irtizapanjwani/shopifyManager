@@ -96,7 +96,7 @@ export default function WhyUs() {
       className="py-20 lg:py-24 bg-[#292D3F]"
       aria-labelledby="whyus-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-[72px]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: heading + slide content */}
           <div className="flex flex-col justify-between">

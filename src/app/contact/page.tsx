@@ -60,7 +60,7 @@ export default function ContactPage() {
           background: "linear-gradient(180deg, #0A2515 0%, #123C21 35%, #19532E 60%, #28A745 85%, #32D46F 100%)",
         }}
       >
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="w-full px-[72px] text-center">
           <h1
             className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-white leading-snug"
             style={{ fontFamily: "var(--font-poppins), sans-serif", fontWeight: 700 }}
@@ -72,7 +72,7 @@ export default function ContactPage() {
 
       {/* ── Get In Touch Form ── */}
       <section className="bg-white py-20">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-full px-[72px]">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-[#0d3d23] mb-4">
             Get In <span className="text-[#59DFAB]">Touch</span>
           </h2>

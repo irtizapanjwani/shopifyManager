@@ -9,7 +9,7 @@ interface LegalPageProps {
 export default function LegalPage({ title, children }: LegalPageProps) {
   return (
     <article className="bg-[#fbfdfc] py-16 sm:py-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-[72px]">
         <p className="text-xs font-bold uppercase tracking-wider text-[#008060]">
           {siteConfig.name}
         </p>

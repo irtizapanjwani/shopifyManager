@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function CTABanner() {
   return (
     <section className="bg-gradient-to-b from-[#56E5A3] to-[#4DF78D] text-white py-8 sm:py-10 lg:py-0 lg:min-h-[355px] relative overflow-visible">
-      <div className="max-w-7xl min-h-[inherit] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 items-center gap-8 lg:gap-16">
+      <div className="w-full px-[72px] min-h-[inherit] relative z-10 grid lg:grid-cols-2 items-center gap-8 lg:gap-16">
         <div className="relative flex justify-center lg:justify-start self-stretch min-h-[280px] lg:min-h-0">
           <Image
             src="/Shopify Launchpad Images/shopify2.png"

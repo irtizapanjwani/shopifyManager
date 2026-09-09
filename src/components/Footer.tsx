@@ -4,23 +4,30 @@ import { siteConfig } from "@/config/site";
 const serviceLinks = [
   "Shopify Services",
   "E-Commerce Marketing",
-  "Done For You Stores",
-  "Dropshipping Automation",
-  "Theme 2.0 Customization",
+  "Done For You",
+  "Dropshipping",
 ] as const;
 
 const quickLinks = [
   { label: "Contact Us", href: "/#contact" },
   { label: "Portfolio", href: "/#portfolio" },
-  { label: "Our Process", href: "/#process" },
-  { label: "Pricing Plans", href: "/#pricing" },
-  { label: "Client Testimonials", href: "/#testimonials" },
+  { label: "Process", href: "/#process" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Testimonials", href: "/#testimonials" },
   { label: "FAQs", href: "/#faq" },
 ] as const;
 
-const ShopBagIcon = () => (
-  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z" />
+
+
+const PhoneIcon = () => (
+  <svg className="w-5 h-5 text-[#22c55e]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+  </svg>
+);
+
+const EmailIcon = () => (
+  <svg className="w-5 h-5 text-[#22c55e]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
   </svg>
 );
 
@@ -28,37 +35,36 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-[#08130e] text-white pt-20 pb-12 border-t border-[#1b3024]"
+      className="bg-[#010810] text-white pt-16 pb-8"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-[72px]">
 
         {/* ── Footer Columns ─────────────────────────────────── */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-14 border-b border-[#1b3024] text-xs">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1 space-y-4">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-[#8cb63c] flex items-center justify-center text-[#08130e]">
-                <ShopBagIcon />
-              </div>
-              <span className="text-white text-lg font-bold tracking-tight">
-                Shopify <span className="text-[#9bc43f]">Managers</span>
-              </span>
+          <div className="col-span-1 space-y-5">
+            <Link href="/" className="flex items-center gap-3">
+              <img
+                src="/Shopify Launchpad Images/logo-white.png"
+                alt="Shopify Launchpad Logo"
+                className="h-16 w-auto"
+              />
             </Link>
-            <p className="text-slate-400 leading-relaxed pr-4">
-              {siteConfig.name} is the leading Shopify agency covering various solutions
+            <p className="text-slate-400 text-sm leading-relaxed pr-4">
+              Shopify Launchpad is the leading Shopify agency that covers various solutions
               to help you grow your online business to success.
             </p>
           </div>
 
           {/* Services */}
-          <div className="space-y-3">
-            <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">
-              Core Services
+          <div className="space-y-4">
+            <h4 className="font-bold text-white text-base">
+              Services
             </h4>
-            <ul className="space-y-2 text-slate-400">
+            <ul className="space-y-3 text-slate-400 text-sm">
               {serviceLinks.map((svc) => (
                 <li key={svc}>
-                  <Link href="/#services" className="hover:text-[#9bc43f] transition-colors">
+                  <Link href="/#services" className="hover:text-white transition-colors">
                     {svc}
                   </Link>
                 </li>
@@ -67,14 +73,14 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-3">
-            <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">
+          <div className="space-y-4">
+            <h4 className="font-bold text-white text-base">
               Quick Links
             </h4>
-            <ul className="space-y-2 text-slate-400">
+            <ul className="space-y-3 text-slate-400 text-sm">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="hover:text-[#9bc43f] transition-colors">
+                  <Link href={link.href} className="hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -83,39 +89,44 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="space-y-3">
-            <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">
-              Direct Contact
+          <div className="space-y-4">
+            <h4 className="font-bold text-white text-base">
+              Contact Information
             </h4>
-            <ul className="space-y-2 text-slate-400">
-              <li className="text-white font-medium">{siteConfig.phone}</li>
-              <li>{siteConfig.contactEmail}</li>
-              <li>{siteConfig.locations}</li>
-              <li className="pt-2 text-[#9bc43f] font-semibold">
-                Support Hours: {siteConfig.supportHours}
+            <ul className="space-y-4 text-slate-400 text-sm">
+              <li className="flex items-center gap-3">
+                <PhoneIcon />
+                <span>{siteConfig.phone}</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <EmailIcon />
+                <span>{siteConfig.contactEmail}</span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* ── Legal ─────────────────────────────────────────── */}
-        <div className="pt-8 text-[11px] text-slate-500 space-y-4">
-          <p className="leading-relaxed">
-            <strong>Disclaimer:</strong> Shopify Managers is an independent company providing
-            design, development, and marketing consulting services for e-commerce solutions.
-            We are not affiliated, associated, authorised, endorsed by, or in any way
-            officially connected with Shopify Inc., or any of its subsidiaries or affiliates.
-            The name &ldquo;Shopify&rdquo; as well as related names, marks, emblems, and images are
-            registered trademarks of their respective owners.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
-            <div>Copyright © {new Date().getFullYear()} Shopify Managers. All rights reserved.</div>
-            <div className="flex space-x-4">
-              <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-slate-300 transition-colors">Terms of Service</Link>
-              <Link href="/sitemap.xml" className="hover:text-slate-300 transition-colors">Sitemap</Link>
+        {/* ── Bottom Bar ─────────────────────────────────────── */}
+        <div className="border-t border-slate-700 pt-8 space-y-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+            <div className="text-white font-medium">
+              © Shopify Launchpad {new Date().getFullYear()}. All rights reserved.
+            </div>
+            <div className="flex items-center gap-6 text-slate-400">
+              <Link href="/terms" className="hover:text-white transition-colors">Terms of Services</Link>
+              <span className="text-slate-600">|</span>
+              <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <span className="text-slate-600">|</span>
+              <Link href="/refunds" className="hover:text-white transition-colors">Refunds & Dispute</Link>
             </div>
           </div>
+          <p className="text-slate-500 text-xs leading-relaxed text-center md:text-left">
+            shopifylaunchpads independent company that provides design and development services
+            for e-commerce solutions. We are not affiliated, associated, authorized, endorsed by,
+            or in any way officially connected with Shopify Inc., or any of its subsidiaries or
+            affiliates. The name &ldquo;Shopify&rdquo; as well as related names, marks, emblems, and images
+            are registered trademarks of their respective owners.
+          </p>
         </div>
       </div>
 
@@ -124,10 +135,13 @@ export default function Footer() {
         <Link
           href="/#contact"
           title="Help & Support"
-          className="flex items-center justify-center w-11 h-11 bg-white text-[#08130e] rounded-full shadow-2xl hover:bg-slate-100 hover:scale-110 transition-all font-bold text-base border border-slate-200"
+          className="flex items-center gap-2 px-4 py-3 bg-[#1e293b] text-white rounded-full shadow-2xl hover:bg-slate-700 hover:scale-105 transition-all font-medium text-sm border border-slate-600"
           aria-label="Get help"
         >
-          ?
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Help
         </Link>
       </div>
     </footer>

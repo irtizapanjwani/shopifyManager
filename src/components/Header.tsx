@@ -36,13 +36,13 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 shadow-md transition-colors duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         scrolled ? "bg-[#195f35]" : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 h-20 pt-3 flex items-center justify-between">
+      <div className="w-full px-[72px] h-24 pt-3 flex items-center justify-between">
         <Link href="/" aria-label="Shopify Launch Pad Home" className="flex items-center group focus:outline-none flex-shrink-0">
-          <Image src="/Shopify Launchpad Images/logo-white.png" alt="Shopify Launch Pad Logo" width={153} height={63} className="h-[52px] w-auto" priority />
+          <Image src="/Shopify Launchpad Images/logo-white.png" alt="Shopify Launch Pad Logo" width={153} height={63} className="h-[60px] w-auto" priority />
         </Link>
 
         <div className="hidden lg:flex items-center gap-6">

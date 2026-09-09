@@ -14,7 +14,7 @@ const features = [
 export default function ExpandReach() {
   return (
     <section className="bg-white pt-16 pb-8 sm:pt-24 sm:pb-8 lg:pt-32 lg:pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-[72px]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* ── Left column ───────────────────────────── */}

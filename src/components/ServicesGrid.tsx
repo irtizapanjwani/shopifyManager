@@ -88,7 +88,7 @@ export default function ServicesGrid() {
       className="py-20 lg:py-24 bg-[#f8faf9] border-b border-slate-200"
       aria-labelledby="services-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-[72px]">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-[#008060]">
