@@ -15,10 +15,9 @@ const navLinks = [
 ] as const;
 
 const serviceLinks = [
-  "Theme Development",
-  "Store Migration",
-  "CRO & Speed Optimization",
-  "Headless Shopify",
+  "Shopify Services",
+  "E-Commerce Marketing",
+  "Done For You",
 ] as const;
 
 export default function Header() {
@@ -48,16 +47,16 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-6">
           <nav className="flex items-center space-x-8 text-sm font-medium text-white" aria-label="Main navigation">
             <div className="relative group cursor-pointer" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-              <button className="flex items-center gap-1 hover:text-[#9bc43f] transition-colors py-2 focus:outline-none" aria-expanded={servicesOpen} aria-haspopup="true">
+              <Link href="/services" className="flex items-center gap-1 hover:text-[#9bc43f] transition-colors py-2">
                 Services
                 <svg className={`w-4 h-4 text-slate-400 group-hover:text-[#9bc43f] transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
                 </svg>
-              </button>
+              </Link>
               {servicesOpen && (
                 <div className="absolute left-0 top-full w-56 bg-[#1a2e1a] shadow-2xl rounded-xl border border-[#2d4a35] p-2 z-50">
                   {serviceLinks.map((svc) => (
-                    <Link key={svc} href="/#services" className="block px-4 py-2.5 rounded-lg text-xs font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors">
+                    <Link key={svc} href="/services" className="block px-4 py-2.5 rounded-lg text-xs font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors">
                       {svc}
                     </Link>
                   ))}
@@ -91,7 +90,7 @@ export default function Header() {
 
       {mobileOpen && (
         <div className="lg:hidden bg-[#195f35] border-t border-white/15 px-4 pb-6 pt-4 space-y-1">
-          <Link href="/#services" className="block px-4 py-3 rounded-lg text-sm font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors" onClick={() => setMobileOpen(false)}>
+          <Link href="/services" className="block px-4 py-3 rounded-lg text-sm font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors" onClick={() => setMobileOpen(false)}>
             Services
           </Link>
           {navLinks.map((link) => (
