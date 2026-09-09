@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { label: "Dropshipping", href: "/#services" },
   { label: "About Us", href: "/about" },
-  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Process", href: "/#process" },
   { label: "Pricing", href: "/#pricing" },
   { label: "FAQs", href: "/#faq" },
@@ -70,7 +70,8 @@ export default function Header() {
                 key={link.label}
                 href={link.href}
                 className={`transition-colors ${
-                  link.href === "/about" && pathname === "/about"
+                  (link.href === "/about" && pathname === "/about") ||
+                  (link.href === "/portfolio" && pathname === "/portfolio")
                     ? "text-[#59DFAB]"
                     : "hover:text-[#9bc43f]"
                 }`}
@@ -108,7 +109,8 @@ export default function Header() {
               key={link.label}
               href={link.href}
               className={`block px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
-                link.href === "/about" && pathname === "/about"
+                (link.href === "/about" && pathname === "/about") ||
+                (link.href === "/portfolio" && pathname === "/portfolio")
                   ? "text-[#59DFAB] bg-[#162a20]"
                   : "text-white hover:bg-[#162a20] hover:text-[#9bc43f]"
               }`}
