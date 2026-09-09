@@ -5,34 +5,34 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    question: "How long does a typical Shopify build take?",
+    question: "What Shopify services do you offer?",
     answer:
-      "A focused theme launch usually ships in 3–5 weeks. Custom 2.0 and Plus programmes run 8–16 weeks depending on catalogue size, integrations, and content readiness.",
+      "We offer a comprehensive range of Shopify services including store setup, theme customization, app integration, migration, speed optimization, SEO, and ongoing maintenance to help your e-commerce business thrive.",
   },
   {
-    question: "Do you migrate from WooCommerce, Magento, or another Shopify store?",
+    question: "Can you optimize my Shopify store for better performance?",
     answer:
-      "Yes. We migrate products, customers, redirects, and order history with a freeze plan so you do not lose SEO equity or live checkout during cutover.",
+      "Yes. We optimize store speed, Core Web Vitals, and overall performance to ensure your customers enjoy a fast and seamless shopping experience.",
   },
   {
-    question: "Can you work with our in-house marketers and developers?",
+    question: "Can you set up a new Shopify store from scratch?",
     answer:
-      "We regularly pair with internal teams. Shopify Managers can own the full stack or slot in as theme, CRO, or Plus architecture specialists.",
+      "Absolutely. We handle everything from theme selection and customization to product setup, payment gateway integration, and launch preparation.",
   },
   {
-    question: "What is included in ongoing support?",
+    question: "Can you migrate my existing site to Shopify?",
     answer:
-      "Retainers cover theme updates, app QA, Core Web Vitals monitoring, security patches, and a shared Slack channel. Hours and response SLAs are scoped per plan.",
+      "Yes. We migrate products, customers, order history, and redirects from WooCommerce, Magento, or any other platform with zero downtime.",
   },
   {
-    question: "Do you only work on Shopify Plus?",
+    question: "Can you integrate third-party apps with my Shopify store?",
     answer:
-      "No. We build on Shopify, Shopify Plus, and Hydrogen. Plus is recommended when you need B2B, checkout extensibility, or multi-market operations.",
+      "Yes. We integrate and configure third-party apps for marketing, analytics, inventory management, and other business needs.",
   },
   {
-    question: "How do we start?",
+    question: "Can I find upgrade or downgrade options if I need to revise?",
     answer:
-      "Send your store URL and goals through the contact form. We reply within two business hours with a discovery slot and a complimentary UX and speed audit.",
+      "Yes. We offer flexible plans that can be adjusted based on your evolving business requirements. Contact us to discuss your needs.",
   },
 ];
 
@@ -40,40 +40,40 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="py-24 sm:py-28 bg-white"
+      className="py-16 sm:py-20 bg-white"
       aria-labelledby="faq-heading"
     >
       <div className="w-full px-[72px]">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2
             id="faq-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-medium text-slate-950 tracking-tight"
+            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-medium text-slate-950 tracking-tight"
           >
             Frequently <span className="font-extrabold text-[#58DDB0]">Asked Questions</span>
           </h2>
-          <p className="mt-8 text-base sm:text-lg text-slate-700">
+          <p className="mt-5 text-base sm:text-lg text-slate-500">
             Have confusions? Don&apos;t worry. Check out some of the commonly asked queries.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-7 md:gap-x-8 md:gap-y-7">
+        <div className="grid md:grid-cols-2 gap-5 md:gap-x-7 md:gap-y-5">
           {faqs.map((item) => (
             <details
               key={item.question}
-              className="group bg-[#f6f7f8] px-6 py-7 sm:px-9 sm:py-8"
+              className="group bg-[#f6f7f8] px-6 py-5 sm:px-8 sm:py-6"
             >
-              <summary className="flex cursor-pointer items-center justify-between gap-4 text-left text-lg sm:text-[22px] font-medium leading-snug text-slate-700">
+              <summary className="flex cursor-pointer items-center justify-between gap-4 text-left text-base sm:text-lg font-medium leading-snug text-slate-700">
                 <span className="pr-4">{item.question}</span>
                 <svg
                   viewBox="0 0 24 24"
-                  className="w-6 h-6 flex-shrink-0 stroke-current stroke-[2.5] transition-transform group-open:rotate-180"
+                  className="w-5 h-5 flex-shrink-0 stroke-current stroke-[2.5] transition-transform group-open:rotate-180"
                   fill="none"
                   aria-hidden="true"
                 >
                   <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </summary>
-              <p className="mt-5 text-base text-slate-600 leading-relaxed">{item.answer}</p>
+              <p className="mt-4 text-sm text-slate-600 leading-relaxed">{item.answer}</p>
             </details>
           ))}
         </div>

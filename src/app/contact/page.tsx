@@ -55,14 +55,14 @@ export default function ContactPage() {
     <>
       {/* ── Hero Section ── */}
       <section
-        className="relative min-h-[600px] flex items-end justify-center pb-16"
+        className="relative min-h-[780px] flex items-center justify-center"
         style={{
-          background: "linear-gradient(180deg, #0A2515 0%, #123C21 35%, #19532E 60%, #28A745 85%, #32D46F 100%)",
+          background: "linear-gradient(180deg, #0A2515 0%, #0E2E1C 20%, #134228 40%, #1A6335 55%, #238A46 72%, #2DB85A 88%, #32D46F 100%)",
         }}
       >
-        <div className="w-full px-[72px] text-center">
+        <div className="w-full px-6 md:px-[72px] text-center">
           <h1
-            className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-white leading-snug"
+            className="text-2xl md:text-3xl lg:text-[1.85rem] font-bold text-white leading-relaxed max-w-[750px] mx-auto"
             style={{ fontFamily: "var(--font-poppins), sans-serif", fontWeight: 700 }}
           >
             We look forward to hearing from you and assisting you with all your e-commerce Shopify store development needs!

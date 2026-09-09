@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Dropshipping", href: "/#services" },
-  { label: "About Us", href: "/#about" },
+  { label: "About Us", href: "/about" },
   { label: "Portfolio", href: "/#portfolio" },
   { label: "Process", href: "/#process" },
   { label: "Pricing", href: "/#pricing" },
@@ -24,6 +25,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +66,15 @@ export default function Header() {
               )}
             </div>
             {navLinks.map((link) => (
-              <Link key={link.label} href={link.href} className="hover:text-[#9bc43f] transition-colors">
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`transition-colors ${
+                  link.href === "/about" && pathname === "/about"
+                    ? "text-[#59DFAB]"
+                    : "hover:text-[#9bc43f]"
+                }`}
+              >
                 {link.label}
               </Link>
             ))}
@@ -94,7 +104,16 @@ export default function Header() {
             Services
           </Link>
           {navLinks.map((link) => (
-            <Link key={link.label} href={link.href} className="block px-4 py-3 rounded-lg text-sm font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors" onClick={() => setMobileOpen(false)}>
+            <Link
+              key={link.label}
+              href={link.href}
+              className={`block px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
+                link.href === "/about" && pathname === "/about"
+                  ? "text-[#59DFAB] bg-[#162a20]"
+                  : "text-white hover:bg-[#162a20] hover:text-[#9bc43f]"
+              }`}
+              onClick={() => setMobileOpen(false)}
+            >
               {link.label}
             </Link>
           ))}
