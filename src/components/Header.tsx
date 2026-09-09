@@ -10,7 +10,7 @@ const navLinks = [
   { label: "About Us", href: "/about" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Process", href: "/process" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Pricing", href: "/pricing" },
   { label: "FAQs", href: "/#faq" },
   { label: "Testimonials", href: "/#testimonials" },
 ] as const;
@@ -72,7 +72,8 @@ export default function Header() {
                 className={`transition-colors ${
                   (link.href === "/about" && pathname === "/about") ||
                   (link.href === "/portfolio" && pathname === "/portfolio") ||
-                  (link.href === "/process" && pathname === "/process")
+                  (link.href === "/process" && pathname === "/process") ||
+                  (link.href === "/pricing" && pathname === "/pricing")
                     ? "text-[#59DFAB]"
                     : "hover:text-[#9bc43f]"
                 }`}
@@ -112,7 +113,8 @@ export default function Header() {
               className={`block px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
                 (link.href === "/about" && pathname === "/about") ||
                 (link.href === "/portfolio" && pathname === "/portfolio") ||
-                (link.href === "/process" && pathname === "/process")
+                (link.href === "/process" && pathname === "/process") ||
+                (link.href === "/pricing" && pathname === "/pricing")
                   ? "text-[#59DFAB] bg-[#162a20]"
                   : "text-white hover:bg-[#162a20] hover:text-[#9bc43f]"
               }`}
