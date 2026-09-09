@@ -160,11 +160,11 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      {/* ── CTA Banner ── */}
-      <CTABanner />
-
       {/* ── Testimonials ── */}
       <Testimonials />
+
+      {/* ── CTA Banner ── */}
+      <CTABanner />
 
       {/* ── FAQ ── */}
       <FAQ />
