@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Manrope, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import DropshippingHeader from "@/components/DropshippingHeader";
+import { usePathname } from "next/navigation";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -23,34 +26,17 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Shopify Managers | Premier Shopify E-Commerce Agency",
-  description:
-    "Award-winning Shopify agency specialising in result-driven e-commerce design, development, and optimisation for startups, mid-sized, and enterprise businesses.",
-  keywords: [
-    "Shopify agency",
-    "Shopify development",
-    "e-commerce marketing",
-    "Shopify Plus",
-    "headless Shopify",
-  ],
-  openGraph: {
-    title: "Shopify Managers | Premier Shopify E-Commerce Agency",
-    description:
-      "Build a high-converting Shopify store with the award-winning Shopify Managers agency.",
-    siteName: "Shopify Managers",
-    type: "website",
-  },
-};
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isDropshipping = pathname === "/dropshipping";
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
       className={`${manrope.variable} ${inter.variable} ${poppins.variable} scroll-smooth`}
     >
       <body className={`${manrope.className} min-h-full flex flex-col font-sans antialiased bg-[#fbfdfc]`}>
-        <Header />
+        {isDropshipping ? <DropshippingHeader /> : <Header />}
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

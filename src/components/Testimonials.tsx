@@ -47,10 +47,10 @@ const additionalTestimonials: Testimonial[] = [
     stars: 5,
   },
   {
-    platform: "trustpilot",
+    platform: "facebook",
     quote:
-      "I recently had the pleasure of working with a top-notch Shopify designer, and I'm thrilled with the results! From start to finish, the experience was nothing short of outstanding.",
-    name: "Michael Tannar",
+      "I just had to thank the awesome team at Shopify WebXperts. I was struggling with integrating my store and managing inventory, but they stepped in and handled everything seamlessly. Every problem I've had has been fixed in less than an hour! My experience has been outstanding. Well done, guys!",
+    name: "Laura Brian",
     stars: 5,
   },
   {
@@ -196,7 +196,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
   );
 }
 
-export default function Testimonials({ allTestimonials = false }: { allTestimonials?: boolean }) {
+export default function Testimonials({ allTestimonials = false, title, subtitle, customTestimonials }: { allTestimonials?: boolean; title?: string; subtitle?: string; customTestimonials?: Testimonial[] }) {
   return (
     <section
       id="testimonials"
@@ -209,25 +209,49 @@ export default function Testimonials({ allTestimonials = false }: { allTestimoni
             id="testimonials-heading"
             className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
           >
-            Let&apos;s Hear from{" "}
-            <span className="text-[#58DDB0]">Our Clients</span>
+            {title ? (
+              <>{title}</>
+            ) : (
+              <>
+                Let&apos;s Hear from{" "}
+                <span className="text-[#58DDB0]">Our Clients</span>
+              </>
+            )}
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-500">
-            We&apos;ve shared a lot about our work. Why don&apos;t you take a look at what our clients have to say about our expertise?
+            {subtitle || "We&apos;ve shared a lot about our work. Why don&apos;t you take a look at what our clients have to say about our expertise?"}
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonials.map((t) => (
-            <TestimonialCard key={t.name} t={t} />
-          ))}
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-          {(allTestimonials ? additionalTestimonials : additionalTestimonials.slice(0, 4)).map((t) => (
-            <TestimonialCard key={t.name} t={t} />
-          ))}
-        </div>
+        {customTestimonials ? (
+          <>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {customTestimonials.slice(0, 4).map((t) => (
+                <TestimonialCard key={t.name} t={t} />
+              ))}
+            </div>
+            {customTestimonials.length > 4 && (
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                {customTestimonials.slice(4, 8).map((t) => (
+                  <TestimonialCard key={t.name} t={t} />
+                ))}
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {testimonials.map((t) => (
+                <TestimonialCard key={t.name} t={t} />
+              ))}
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+              {(allTestimonials ? additionalTestimonials : additionalTestimonials.slice(0, 4)).map((t) => (
+                <TestimonialCard key={t.name} t={t} />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
