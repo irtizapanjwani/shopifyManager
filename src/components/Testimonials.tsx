@@ -11,28 +11,28 @@ const testimonials: Testimonial[] = [
   {
     platform: "facebook",
     quote:
-      "Switching to Shopify was a game-changer, and partnering with Shopify Launchpad was instrumental in our success. They delivered customized solutions with extensive features that exceeded my expectations. Their expertise and support have been invaluable, and I highly recommend them to anyone looking to elevate their e-commerce experience.",
+      "Switching to Shopify was a game-changer, and partnering with Shopify Managers was instrumental in our success. They delivered customized solutions with extensive features that exceeded my expectations. Their expertise and support have been invaluable, and I highly recommend them to anyone looking to elevate their e-commerce experience.",
     name: "Sam Denver",
     stars: 5,
   },
   {
     platform: "google",
     quote:
-      "Shopify Launchpad expertly transformed my vision into a thriving Shopify store. What impressed me most was their ability to deliver exceptional quality at an affordable price. The value I received far exceeded my investment, making it a truly worthwhile partnership. I'm grateful for their expertise and highly recommend their services.",
+      "Shopify Managers expertly transformed my vision into a thriving Shopify store. What impressed me most was their ability to deliver exceptional quality at an affordable price. The value I received far exceeded my investment, making it a truly worthwhile partnership. I'm grateful for their expertise and highly recommend their services.",
     name: "Anastasia Luke",
-    stars: 5,
-  },
-  {
-    platform: "trustpilot",
-    quote:
-      "The fact that they were so quick in building my shopify website while charging a minimal fee for it was enough to satisfy me.",
-    name: "Amie Lynn Spies",
     stars: 5,
   },
   {
     platform: "google",
     quote:
-      "Since teaming up with Shopify Launchpad, we've seen a significant boost in sales and a substantial decrease in cart abandonment rates, all thanks to Shopify's streamlined checkout process. I'm absolutely thrilled with the results!",
+      "Working with Shopify Managers has been a revelation! Their all-encompassing marketing solutions have enabled me to effectively reach and retain a broad customer base, resulting in significant growth for my business. Their services have truly exceeded my expectations!",
+    name: "Richard Issac",
+    stars: 5,
+  },
+  {
+    platform: "google",
+    quote:
+      "Since teaming up with Shopify Managers, we've seen a significant boost in sales and a substantial decrease in cart abandonment rates, all thanks to Shopify's streamlined checkout process. I'm absolutely thrilled with the results!",
     name: "Eric Samuel",
     stars: 5,
   },
@@ -42,7 +42,7 @@ const additionalTestimonials: Testimonial[] = [
   {
     platform: "facebook",
     quote:
-      "Partnering with Shopify Launchpad has been a game-changer for my business. With their expertise, I've been able to create a thriving Shopify store that's easy to manage, thanks to the intuitive dashboard that lets me oversee all my sales channels in one place.",
+      "Partnering with Shopify Managers has been a game-changer for my business. With their expertise, I've been able to create a thriving Shopify store that's easy to manage, thanks to the intuitive dashboard that lets me oversee all my sales channels in one place.",
     name: "Veronica Matt",
     stars: 5,
   },
@@ -56,14 +56,14 @@ const additionalTestimonials: Testimonial[] = [
   {
     platform: "google",
     quote:
-      "If you're considering building a Shopify store, I highly recommend partnering with Shopify Launchpad. They've transformed my online store into a stunning and effective sales machine, and I've seen a significant boost in sales within just a few months. Their expertise is truly worth investing in!",
+      "If you're considering building a Shopify store, I highly recommend partnering with Shopify Managers. They've transformed my online store into a stunning and effective sales machine, and I've seen a significant boost in sales within just a few months. Their expertise is truly worth investing in!",
     name: "Benjamin Clark",
     stars: 5,
   },
   {
     platform: "google",
     quote:
-      "I'm grateful to Shopify Launchpad for their exceptional services. Their responsive and attentive team took the time to understand our vision, exceeding our expectations with top-notch results. Their dedication to delivering outstanding work is impressive! We couldn't be happier with the final product and highly recommend their services.",
+      "I'm grateful to Shopify Managers for their exceptional services. Their responsive and attentive team took the time to understand our vision, exceeding our expectations with top-notch results. Their dedication to delivering outstanding work is impressive! We couldn't be happier with the final product and highly recommend their services.",
     name: "Whitney Nathan",
     stars: 5,
   },
@@ -77,49 +77,49 @@ const additionalTestimonials: Testimonial[] = [
   {
     platform: "google",
     quote:
-      "I'm thrilled with Shopify Launchpad! Their team exceeded my expectations, delivering a stunning store that looks amazing and drives exceptional performance. Impressed by their expertise, attention to detail, and dedication, I highly recommend them for a top-notch Shopify experience.",
+      "I'm thrilled with Shopify Managers! Their team exceeded my expectations, delivering a stunning store that looks amazing and drives exceptional performance. Impressed by their expertise, attention to detail, and dedication, I highly recommend them for a top-notch Shopify experience.",
     name: "Kylie White",
     stars: 5,
   },
   {
     platform: "google",
     quote:
-      "As a Shopify newbie, I was nervous about building an online store. But Shopify Launchpad were the perfect partner, guiding me through every stage with expert support. The process was seamless and stress-free, and my customers love the final result! I highly recommend them to anyone new to Shopify.",
+      "As a Shopify newbie, I was nervous about building an online store. But Shopify Managers were the perfect partner, guiding me through every stage with expert support. The process was seamless and stress-free, and my customers love the final result! I highly recommend them to anyone new to Shopify.",
     name: "Jane Chen",
     stars: 5,
   },
   {
     platform: "facebook",
     quote:
-      "Shopify Launchpad' e-commerce SEO services have been a game-changer for my online store, driving a 45% sales increase! Their team's expertise and customized plan exceeded my expectations. I'm thrilled with the results and highly recommend their services to anyone looking to boost online visibility and drive sales.",
+      "Shopify Managers' e-commerce SEO services have been a game-changer for my online store, driving a 45% sales increase! Their team's expertise and customized plan exceeded my expectations. I'm thrilled with the results and highly recommend their services to anyone looking to boost online visibility and drive sales.",
     name: "Ariana Lee",
     stars: 5,
   },
   {
     platform: "google",
     quote:
-      "I highly recommend Shopify Launchpad for their exceptional design and development services. Their responsive, professional team delivered a tailored solution that exceeded our expectations, capturing our brand's essence and providing a seamless shopping experience. Unmatched expertise and dedication!",
+      "I highly recommend Shopify Managers for their exceptional design and development services. Their responsive, professional team delivered a tailored solution that exceeded our expectations, capturing our brand's essence and providing a seamless shopping experience. Unmatched expertise and dedication!",
     name: "Mark Groff",
     stars: 5,
   },
   {
     platform: "google",
     quote:
-      "I'm blown away by Shopify Launchpad' e-commerce SEO services! Their team's expertise has significantly increased our organic traffic and online reach. Their innovative, tailored strategies have exceeded my expectations. I'm impressed with their dedication to staying ahead of the curve and delivering exceptional results. Kudos to the team for a job well done!",
+      "I'm blown away by Shopify Managers' e-commerce SEO services! Their team's expertise has significantly increased our organic traffic and online reach. Their innovative, tailored strategies have exceeded my expectations. I'm impressed with their dedication to staying ahead of the curve and delivering exceptional results. Kudos to the team for a job well done!",
     name: "David Miller",
     stars: 5,
   },
   {
     platform: "google",
     quote:
-      "Partnering with Shopify Launchpad has been a game-changer for my online store. They've driven significant traffic and sales growth through strategic marketing campaigns, leveraging their Shopify expertise to reach new customers and boost conversions. I'm thrilled with the results and confident in their ability to fuel long-term success for my brand.",
+      "Partnering with Shopify Managers has been a game-changer for my online store. They've driven significant traffic and sales growth through strategic marketing campaigns, leveraging their Shopify expertise to reach new customers and boost conversions. I'm thrilled with the results and confident in their ability to fuel long-term success for my brand.",
     name: "Amanda Rodriguez",
     stars: 5,
   },
   {
     platform: "facebook",
     quote:
-      "I'm thrilled with Shopify Launchpad' Social Media Management service. Since partnering, our engagement has soared 45% in just a few months. Their creative content, strategic posting, and engagement tactics have resonated with our audience, driving website traffic and sales. I'm impressed and look forward to continued collaboration.",
+      "I'm thrilled with Shopify Managers' Social Media Management service. Since partnering, our engagement has soared 45% in just a few months. Their creative content, strategic posting, and engagement tactics have resonated with our audience, driving website traffic and sales. I'm impressed and look forward to continued collaboration.",
     name: "Tom Baker",
     stars: 5,
   },
@@ -153,9 +153,9 @@ function PlatformLogo({ platform }: { platform: string }) {
       <Image
         src="/Shopify Launchpad Images/facebook-logo.png"
         alt="Facebook"
-        width={120}
-        height={40}
-        className="h-8 w-auto"
+        width={50}
+        height={18}
+        className="h-4 w-auto object-contain"
       />
     );
   }

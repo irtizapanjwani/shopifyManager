@@ -43,7 +43,7 @@ export default function ServicesPage() {
 
               {/* Paragraph */}
               <p className="mt-[28px] max-w-[900px] text-[16px] font-normal leading-[1.75] text-white">
-                Struggling with building your online store? Shopify Launchpad
+                Struggling with building your online store? Shopify Managers
                 specializes in delivering the all-inclusive Shopify solutions
                 that offers scalability, performance and flexibility needed to
                 manage stores in different languages, currencies and locations.

@@ -60,12 +60,12 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <img
                 src="/Shopify Launchpad Images/logo-white.png"
-                alt="Shopify Launchpad Logo"
+                alt="Shopify Managers Logo"
                 className="h-16 w-auto"
               />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed pr-4">
-              Shopify Launchpad is the leading Shopify agency that covers various solutions
+              Shopify Managers is the leading Shopify agency that covers various solutions
               to help you grow your online business to success.
             </p>
           </div>
@@ -124,7 +124,7 @@ export default function Footer() {
         <div className="border-t border-slate-700 pt-8 space-y-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
             <div className="text-white font-medium">
-              © Shopify Launchpad {new Date().getFullYear()}. All rights reserved.
+              © Shopify Managers {new Date().getFullYear()}. All rights reserved.
             </div>
             <div className="flex items-center gap-6 text-slate-400">
               <Link href="/terms" className="hover:text-white transition-colors">Terms of Services</Link>
@@ -135,7 +135,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-slate-500 text-xs leading-relaxed text-center md:text-left">
-            shopifylaunchpads independent company that provides design and development services
+            shopifymanagers independent company that provides design and development services
             for e-commerce solutions. We are not affiliated, associated, authorized, endorsed by,
             or in any way officially connected with Shopify Inc., or any of its subsidiaries or
             affiliates. The name &ldquo;Shopify&rdquo; as well as related names, marks, emblems, and images
