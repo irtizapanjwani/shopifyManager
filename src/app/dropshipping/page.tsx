@@ -864,7 +864,7 @@ export default function DropshippingPage() {
       </section>
 
       <Testimonials
-        title={<>What Our Clients Have to Say</>}
+        title="What Our Clients Have to Say"
         subtitle="Read the positive reviews and testimonials we've received from our happy clients."
         customTestimonials={dropshippingTestimonials}
       />

@@ -196,7 +196,17 @@ function TestimonialCard({ t }: { t: Testimonial }) {
   );
 }
 
-export default function Testimonials({ allTestimonials = false, title, subtitle, customTestimonials }: { allTestimonials?: boolean; title?: string; subtitle?: string; customTestimonials?: Testimonial[] }) {
+export default function Testimonials({
+  allTestimonials = false,
+  title,
+  subtitle,
+  customTestimonials,
+}: {
+  allTestimonials?: boolean;
+  title?: React.ReactNode;
+  subtitle?: React.ReactNode;
+  customTestimonials?: Testimonial[];
+}) {
   return (
     <section
       id="testimonials"
