@@ -16,9 +16,9 @@ const navLinks = [
 ] as const;
 
 const serviceLinks = [
-  "Shopify Services",
-  "E-Commerce Marketing",
-  "Done For You",
+  { label: "Shopify Services", href: "/shopify-services" },
+  { label: "E-Commerce Marketing", href: "/ecommerce-marketing" },
+  { label: "Done For You", href: "/services" },
 ] as const;
 
 export default function Header() {
@@ -58,8 +58,8 @@ export default function Header() {
               {servicesOpen && (
                 <div className="absolute left-0 top-full w-56 bg-[#1a2e1a] shadow-2xl rounded-xl border border-[#2d4a35] p-2 z-50">
                   {serviceLinks.map((svc) => (
-                    <Link key={svc} href="/shopify-services" className="block px-4 py-2.5 rounded-lg text-xs font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors">
-                      {svc}
+                    <Link key={svc.label} href={svc.href} className="block px-4 py-2.5 rounded-lg text-xs font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors">
+                      {svc.label}
                     </Link>
                   ))}
                 </div>
@@ -105,7 +105,7 @@ export default function Header() {
 
       {mobileOpen && (
         <div className="lg:hidden bg-[#195f35] border-t border-white/15 px-4 pb-6 pt-4 space-y-1">
-          <Link href="/services" className="block px-4 py-3 rounded-lg text-sm font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors" onClick={() => setMobileOpen(false)}>
+          <Link href="/shopify-services" className="block px-4 py-3 rounded-lg text-sm font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors" onClick={() => setMobileOpen(false)}>
             Services
           </Link>
           {navLinks.map((link) => (

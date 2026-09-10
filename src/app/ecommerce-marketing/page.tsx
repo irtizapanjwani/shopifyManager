@@ -6,7 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import CTABanner from "@/components/CTABanner";
 import FAQ from "@/components/FAQ";
 
-export default function ShopifyServicesPage() {
+export default function EcommerceMarketingPage() {
   return (
     <>
       {/* ── Hero Section ── */}
@@ -17,14 +17,14 @@ export default function ShopifyServicesPage() {
             "linear-gradient(180deg, #061a10 0%, #0A2515 12%, #0F3320 28%, #145A32 42%, #1B7A42 58%, #22A350 74%, #2CC968 88%, #34E077 100%)",
         }}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:pl-8 md:pr-6 w-full flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="max-w-[1400px] mx-auto px-6 md:pl-4 md:pr-6 w-full flex flex-col md:flex-row items-center justify-between gap-10">
           {/* Left Content */}
-          <div className="flex-1 max-w-[600px] pt-28">
+          <div className="flex-1 max-w-[700px] pt-22">
             <h1
-              className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-white leading-[1.2]"
+              className="text-2xl md:text-3xl lg:text-[2.25rem] font-bold text-white leading-[1.3]"
               style={{ fontFamily: "var(--font-poppins), sans-serif", fontWeight: 700 }}
             >
-              Get a Next-Level Online Store for<br />Shopify and Shopify Plus
+              Grow Your Online Business with<br />Proven<br />E-commerce Marketing Strategies
             </h1>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
@@ -90,7 +90,7 @@ export default function ShopifyServicesPage() {
           {/* Green Banner */}
           <div className="rounded-3xl bg-gradient-to-r from-[#46E680] to-[#58DDB0] pt-20 px-16 pb-0 text-center relative">
             <h2 className="text-2xl md:text-3xl lg:text-[2.25rem] font-normal text-white leading-tight mb-6">
-              We Design and Develop Highly Functional, <span className="font-extrabold">Conversion-<br />Driven</span> Shopify E-Commerce Stores
+              We Craft Personalized Marketing Campaigns To <span className="font-extrabold">Enhance<br />Your E-Commerce Store's Performance.</span>
             </h2>
             <p className="text-white text-sm md:text-base leading-relaxed max-w-4xl mx-auto mb-8">
               Are you planning to kickstart your Shopify business? Or want to revamp your already existing store? We will help you globalize your business. We offer 24/7 free support for the design and development of your Shopify e-commerce store. Our main focus is to make your business visible to the global market. Our team has the expertise to help you reach your target audience and generate more sales leads.
@@ -163,46 +163,14 @@ export default function ShopifyServicesPage() {
           <div className="py-20 text-center">
             <div className="max-w-4xl mx-auto px-6">
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
-                <span className="text-[#58DDB0]">Customized E-Commerce Shopify Solutions</span> <span className="text-gray-800 font-normal">for<br />Your Business Needs</span>
+                <span className="text-gray-800 font-normal">Drive Real Results With Our</span> <span className="text-[#58DDB0] font-bold">Tailored E-<br />commerce SEO Strategies</span>
               </h2>
               <p className="text-gray-600 text-base leading-relaxed max-w-3xl mx-auto">
-                Whether you require advanced functionality, integration with third-party apps, or a seamless checkout process, we have the expertise to deliver tailored solutions that drive results. From small tweaks to full-scale customizations, we&apos;ll work closely with you to make the most of your Shopify store and help you achieve your e-commerce objectives.
+                We combine industry expertise with innovative tactics to create tailored strategies that drive measurable outcomes for your business. Whether you aim to increase sales, improve ROI, or expand your market reach, our team is committed to delivering the results you need to succeed. Achieve your business goals and exceed expectations with our impactful e-commerce strategies. Contact us today!
               </p>
             </div>
           </div>
 
-          {/* How We Build Section */}
-          <div className="pt-8 pb-16">
-            <div className="max-w-[1400px] mx-auto pl-2 pr-6 md:pl-4 md:pr-12 flex flex-col md:flex-row items-center gap-12">
-              {/* Left Content */}
-              <div className="flex-1">
-                <p className="text-gray-500 text-sm mb-4">How We Build Your E-Commerce Shopify Store</p>
-                <h2 className="text-2xl md:text-3xl font-normal text-gray-900 leading-tight mb-6 whitespace-nowrap" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
-                  Research, Design, And Development
-                </h2>
-                <p className="text-gray-600 text-sm leading-relaxed mb-8">
-                  Building a successful Shopify website requires more than choosing a template and adding products. It&apos;s about understanding your brand, target audience, and unique selling proposition. Our team begins by creating a detailed blueprint outlining your Shopify store&apos;s structure, design elements, and functionality. We then execute each step of the plan, ensuring your Shopify website is visually appealing and optimized for conversions and user experience.
-                </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white text-sm font-semibold hover:bg-gray-800 transition-all duration-300"
-                >
-                  Get in Touch with Us
-                </Link>
-              </div>
-
-              {/* Right Image */}
-              <div className="flex-1 flex justify-center">
-                <Image
-                  src="/shopify-custom-services/9.png"
-                  alt="Research, Design, And Development"
-                  width={500}
-                  height={500}
-                  className="w-full max-w-[500px] h-auto"
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -222,12 +190,12 @@ export default function ShopifyServicesPage() {
                     className="h-[250px] w-auto object-contain"
                   />
                 </div>
-                <p className="text-gray-300 text-sm mb-3">Expert E-Commerce Shopify Design Solutions</p>
+                <p className="text-white text-sm mb-3">begin Your E-commerce Journey</p>
                 <h3 className="text-2xl font-semibold leading-tight mb-5">
-                  <span className="text-[#58DDB0]">Enhance the Shopping Experience</span> <span className="text-white">for Your Customers</span>
+                  <span className="text-white">Understanding Your </span> <span className="text-[#58DDB0] font-semibold">Target Audience First</span>
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  Our designers follow a customer-centric approach that prioritizes ease of navigation, intuitive layout, and seamless functionality to ensure customers have a positive and memorable shopping experience. From the moment they land on your site to the checkout process, we&apos;ll design every element with your users in mind, driving engagement and boosting conversions.
+                <p className="text-white text-sm leading-relaxed mb-6">
+                  A business success begins with knowing your audience and what they're searching for online. We understand your audience's behaviors and preferences through extensive research and analysis. We can develop a tailored marketing strategy that resonates with them by understanding their needs, pain points, and aspirations. Our approach includes everything from optimizing your website for relevant keywords to creating compelling content and enhancing user experience - all aiming to connect with your audience and drive positive results.
                 </p>
                 <Link
                   href="/contact"
@@ -248,12 +216,12 @@ export default function ShopifyServicesPage() {
                     className="h-[250px] w-auto object-contain"
                   />
                 </div>
-                <p className="text-gray-300 text-sm mb-3">Take Your Store to The Next Level</p>
+                <p className="text-white text-sm mb-3">Let’s Turn Vision into Reality</p>
                 <h3 className="text-2xl font-semibold leading-tight mb-5">
-                  <span className="text-[#58DDB0]">Professional Shopify Development That Drives</span> <span className="text-white">Conversions</span>
+                  <span className="text-white">Building a </span> <span className="text-[#58DDB0]">Comprehensive Marketing Strategy</span>
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  Ready to turn your design concepts into a fully functional Shopify store? Our expert development team specializes in bringing designs to life with precision and expertise. From optimizing loading times to implementing responsive design elements, we&apos;ll fine-tune every aspect of your Shopify store to deliver a seamless and enjoyable shopping experience for your customers.
+                <p className="text-white text-sm leading-relaxed mb-6 font-semibold">
+                  Now that we've understood your target audience, it's time to craft a comprehensive marketing strategy for your e-commerce store. We'll work closely with you to develop a comprehensive plan that addresses your unique business goals and challenges. From on-page optimization and content marketing to social media engagement and paid advertising, our experts develop strategies that maximize your visibility, attract qualified traffic, and increase conversions. Ready to take your e-commerce to the next level? Let's craft a winning strategy together.
                 </p>
                 <Link
                   href="/contact"
@@ -274,12 +242,12 @@ export default function ShopifyServicesPage() {
                     className="h-[200px] w-auto object-contain"
                   />
                 </div>
-                <p className="text-gray-300 text-sm mb-3">Our Expert Maintenance Services</p>
+                <p className="text-white text-sm mb-3">Identify Areas For Improvement</p>
                 <h3 className="text-2xl font-semibold leading-tight mb-5">
-                  <span className="text-white">Keep Your </span><span className="text-[#58DDB0]">E-Commerce Shopify Store Running Smoothly</span>
+                  <span className="text-white">Testing and </span><span className="text-[#58DDB0]">Improving Performance</span>
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  Our team will conduct regular checkups and performance audits to identify potential issues before they impact your store&apos;s performance. From monitoring security vulnerabilities to optimizing loading times, we&apos;ll take proactive steps to keep your Shopify store running smoothly and prevent downtime or disruptions to your business.
+                <p className="text-white text-sm leading-relaxed mb-6">
+                  Our commitment to your success doesn't end after implementation. Using data analysis, user feedback, and industry best practices, we identify areas for optimization and fine-tune your strategy for maximum effectiveness. Whether it's tweaking meta tags, optimizing page load speed, or fine-tuning content structure, every adjustment aims to enhance your website's performance and drive meaningful results. Ready to refine your e-commerce approach and achieve lasting success? Let's collaborate and optimize your strategy for maximum impact.
                 </p>
                 <Link
                   href="/contact"
