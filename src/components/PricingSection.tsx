@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import PricingModal from "./PricingModal";
 
 interface PricingTier {
   name: string;
@@ -261,14 +262,22 @@ function BadgeRibbon({ type }: { type: "bestseller" | "toprated" }) {
 export default function PricingSection() {
   const [activeTab, setActiveTab] = useState<PlanTab>("E-Commerce");
   const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: string }>({ name: "", price: "" });
   const plans = planData[activeTab];
 
+  const openPricingModal = (plan: PricingTier) => {
+    setSelectedPlan({ name: plan.name, price: plan.price });
+    setModalOpen(true);
+  };
+
   return (
-    <section
-      id="pricing"
-      className="py-20 bg-[#f5f6f7]"
-      aria-labelledby="pricing-heading"
-    >
+    <>
+      <section
+        id="pricing"
+        className="py-20 bg-[#f5f6f7]"
+        aria-labelledby="pricing-heading"
+      >
       <div className="w-full px-[72px]">
         <div className="max-w-3xl mx-auto text-center mb-10">
           <h2
@@ -398,8 +407,8 @@ export default function PricingSection() {
               </div>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/#contact"
+                <button
+                  onClick={() => openPricingModal(plan)}
                   className={`flex-1 text-center py-3 rounded-full text-sm font-bold transition-colors ${
                     isHighlighted
                       ? "border-2 border-white bg-transparent text-white"
@@ -407,9 +416,9 @@ export default function PricingSection() {
                   }`}
                 >
                   Get Started
-                </Link>
-                <Link
-                  href="/#contact"
+                </button>
+                <button
+                  onClick={() => window.dispatchEvent(new Event("openHelpChat"))}
                   className={`flex-1 text-center py-3 rounded-full text-sm font-bold border-2 transition-colors ${
                     isHighlighted
                       ? "border-white bg-white text-[#08130e]"
@@ -426,10 +435,10 @@ export default function PricingSection() {
                     </svg>
                     Chat Now
                   </span>
-                </Link>
+                </button>
               </div>
               <Link
-                href="/#contact"
+                href={`/package-details?plan=${encodeURIComponent(plan.name)}`}
                 className={`mt-7 text-center text-sm font-semibold underline underline-offset-4 transition-colors ${
                   isHighlighted ? "text-white" : "text-slate-900"
                 }`}
@@ -473,5 +482,13 @@ export default function PricingSection() {
         </div>
       </div>
     </section>
+
+    <PricingModal
+      isOpen={modalOpen}
+      onClose={() => setModalOpen(false)}
+      planName={selectedPlan.name}
+      planPrice={selectedPlan.price}
+    />
+    </>
   );
 }

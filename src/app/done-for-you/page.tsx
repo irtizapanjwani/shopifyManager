@@ -1,12 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Testimonials from "@/components/Testimonials";
 import CTABanner from "@/components/CTABanner";
 import FAQ from "@/components/FAQ";
+import ConsultModal from "@/components/ConsultModal";
 
 export default function DoneForYouPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <>
       {/* ── Hero Section ── */}
@@ -24,15 +28,15 @@ export default function DoneForYouPage() {
               className="text-3xl md:text-4xl lg:text-[2.698rem] font-bold text-white leading-[1.3]"
               style={{ fontFamily: "var(--font-poppins), sans-serif", fontWeight: 700 }}
             >
-              From Product Hunting to Delivery,<br />We've Got You Covered.
+              From Product Hunting to Delivery,<br />We&apos;ve Got You Covered.
             </h1>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
+              <button
+                onClick={() => setModalOpen(true)}
                 className="px-8 py-3 rounded-full border border-white text-white text-sm font-semibold hover:bg-white hover:text-[#19532E] transition-all duration-300"
               >
                 Get a Free Consultation
-              </Link>
+              </button>
               <Link
                 href="/pricing"
                 className="px-8 py-3 text-white text-sm font-semibold hover:text-white/80 transition-all duration-300"
@@ -95,12 +99,12 @@ export default function DoneForYouPage() {
             <p className="text-white text-sm md:text-base leading-relaxed max-w-4xl mx-auto mb-8">
               Are you ready to elevate your e-commerce business without the hassle of managing every detail yourself? Look no further than our comprehensive "Done For You" services. Let us handle everything for you, from product sourcing to shipping logistics. With our dedicated team managing the day-to-day tasks, you can focus on the big picture – growing your business and achieving your goals.
             </p>
-            <Link
-              href="/contact"
+            <button
+              onClick={() => setModalOpen(true)}
               className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-gray-800 text-sm font-semibold hover:bg-gray-100 transition-all duration-300 mb-24"
             >
               Get a Free Consultation
-            </Link>
+            </button>
           </div>
 
           {/* Service Cards - Overlapping the green banner */}
@@ -279,6 +283,7 @@ export default function DoneForYouPage() {
       {/* FAQ Section */}
       <FAQ />
 
+      <ConsultModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

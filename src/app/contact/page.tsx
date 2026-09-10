@@ -81,7 +81,8 @@ export default function ContactPage() {
             need assistance with your Shopify store, or just want to say hello, we&apos;re here to help!
           </p>
 
-          <form onSubmit={handleSubmit} className="bg-[#1a2e22] rounded-3xl p-8 md:p-12 space-y-6">
+          <div className="max-w-[900px] mx-auto">
+            <form onSubmit={handleSubmit} className="bg-[#1a2e22] rounded-3xl p-8 md:p-12 space-y-6">
             {/* Row 1 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -232,6 +233,7 @@ export default function ContactPage() {
               Submit Your Query
             </button>
           </form>
+          </div>
         </div>
       </section>
     </>

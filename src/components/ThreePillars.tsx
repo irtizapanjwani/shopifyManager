@@ -103,7 +103,7 @@ export default function ThreePillars() {
                       {p.body}
                     </p>
                     <Link
-                      href="/#contact"
+                      href="/process"
                       className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#59DFAB] text-white text-sm font-bold hover:bg-[#59DFAB] hover:opacity-90 transition-colors"
                     >
                       Learn More

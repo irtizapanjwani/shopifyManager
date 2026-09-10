@@ -1,12 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Testimonials from "@/components/Testimonials";
 import CTABanner from "@/components/CTABanner";
 import FAQ from "@/components/FAQ";
+import ConsultModal from "@/components/ConsultModal";
 
 export default function ShopifyServicesPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <>
       {/* ── Hero Section ── */}
@@ -27,12 +31,12 @@ export default function ShopifyServicesPage() {
               Get a Next-Level Online Store for<br />Shopify and Shopify Plus
             </h1>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
+              <button
+                onClick={() => setModalOpen(true)}
                 className="px-8 py-3 rounded-full border border-white text-white text-sm font-semibold hover:bg-white hover:text-[#19532E] transition-all duration-300"
               >
                 Get a Free Consultation
-              </Link>
+              </button>
               <Link
                 href="/pricing"
                 className="px-8 py-3 text-white text-sm font-semibold hover:text-white/80 transition-all duration-300"
@@ -95,12 +99,12 @@ export default function ShopifyServicesPage() {
             <p className="text-white text-sm md:text-base leading-relaxed max-w-4xl mx-auto mb-8">
               Are you planning to kickstart your Shopify business? Or want to revamp your already existing store? We will help you globalize your business. We offer 24/7 free support for the design and development of your Shopify e-commerce store. Our main focus is to make your business visible to the global market. Our team has the expertise to help you reach your target audience and generate more sales leads.
             </p>
-            <Link
-              href="/contact"
+            <button
+              onClick={() => setModalOpen(true)}
               className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-gray-800 text-sm font-semibold hover:bg-gray-100 transition-all duration-300 mb-24"
             >
               Get a Free Consultation
-            </Link>
+            </button>
           </div>
 
           {/* Service Cards - Overlapping the green banner */}
@@ -302,6 +306,7 @@ export default function ShopifyServicesPage() {
       {/* FAQ Section */}
       <FAQ />
 
+      <ConsultModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ConsultModal from "@/components/ConsultModal";
 
 const allFaqs = [
   {
@@ -77,6 +79,8 @@ const allFaqs = [
 ];
 
 export default function FAQPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <>
       {/* ── Hero Section ── */}
@@ -97,12 +101,12 @@ export default function FAQPage() {
               Got Questions? Contact Our Team For Expert Guidance.
             </h1>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
+              <button
+                onClick={() => setModalOpen(true)}
                 className="px-8 py-3 rounded-full border border-white text-white text-sm font-semibold hover:bg-white hover:text-[#19532E] transition-all duration-300"
               >
                 Get a Free Consultation
-              </Link>
+              </button>
               <Link
                 href="/pricing"
                 className="px-8 py-3 text-white text-sm font-semibold hover:text-white/80 transition-all duration-300"
@@ -167,6 +171,8 @@ export default function FAQPage() {
           </div>
         </div>
       </section>
+
+      <ConsultModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

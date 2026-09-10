@@ -1,12 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import EssentialFeatures from "@/components/EssentialFeatures";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
+import ConsultModal from "@/components/ConsultModal";
 
 export default function AboutPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <>
       {/* ── Hero Section ── */}
@@ -24,12 +28,12 @@ export default function AboutPage() {
           >
             Shopify Launchpad is a top-performing Shopify agency that offers robust and conversion-driven store for all business owners. We&rsquo;re founders just like you with the aim of helping businesses ignite growth and achieve limitless scale.
           </h1>
-          <Link
-            href="/contact"
+          <button
+            onClick={() => setModalOpen(true)}
             className="inline-flex items-center justify-center mt-10 px-8 py-3 rounded-full border border-white text-white text-sm font-semibold hover:bg-white hover:text-[#19532E] transition-all duration-300"
           >
             Get a Free Consultation
-          </Link>
+          </button>
         </div>
       </section>
 
@@ -125,6 +129,8 @@ export default function AboutPage() {
 
       {/* ── FAQ ── */}
       <FAQ />
+
+      <ConsultModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

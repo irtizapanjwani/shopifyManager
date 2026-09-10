@@ -6,6 +6,7 @@ import Link from "next/link";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTABanner from "@/components/CTABanner";
+import ConsultModal from "@/components/ConsultModal";
 
 const processSteps = [
   {
@@ -32,6 +33,7 @@ const processSteps = [
 
 export default function ProcessPage() {
   const [activeStep, setActiveStep] = useState(-1);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -53,12 +55,12 @@ export default function ProcessPage() {
               We Make It Easy For You To Achieve Your Goals
             </h1>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
+              <button
+                onClick={() => setModalOpen(true)}
                 className="px-8 py-3 rounded-full border border-white text-white text-sm font-semibold hover:bg-white hover:text-[#19532E] transition-all duration-300"
               >
                 Get a Free Consultation
-              </Link>
+              </button>
               <Link
                 href="/pricing"
                 className="px-8 py-3 text-white text-sm font-semibold hover:text-white/80 transition-all duration-300"
@@ -71,11 +73,11 @@ export default function ProcessPage() {
           {/* Right Image */}
           <div className="flex-1 flex justify-center md:justify-end">
             <Image
-              src="/shopify-about/3.png"
+              src="/shopify-donefor/1.png"
               alt="Process illustration"
-              width={500}
-              height={500}
-              className="w-full max-w-[450px] h-auto"
+              width={800}
+              height={800}
+              className="w-full max-w-[750px] h-auto"
             />
           </div>
         </div>
@@ -168,6 +170,8 @@ export default function ProcessPage() {
 
       {/* ── FAQ ── */}
       <FAQ />
+
+      <ConsultModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

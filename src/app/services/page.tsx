@@ -15,7 +15,7 @@ export default function ServicesPage() {
           <div className="relative min-h-[855px]">
 
             {/* Left Content */}
-            <div className="absolute left-0 top-[230px] z-10 w-[900px]">
+            <div className="absolute left-0 top-[300px] z-10 w-[700px]">
 
               {/* Shopify / Shopify Plus */}
               <div className="mb-[38px] flex items-center gap-[14px]">
@@ -33,7 +33,7 @@ export default function ServicesPage() {
               </div>
 
               {/* Heading */}
-              <h1 className="max-w-[900px] text-[46px] font-extrabold leading-[1.25] tracking-[-0.5px] text-white">
+              <h1 className="max-w-[900px] text-[38px] font-extrabold leading-[1.25] tracking-[-0.5px] text-white">
                 We&apos;re Your Shopify Partner: Find
                 <br />
                 Out the
@@ -42,7 +42,7 @@ export default function ServicesPage() {
               </h1>
 
               {/* Paragraph */}
-              <p className="mt-[28px] max-w-[900px] text-[19px] font-normal leading-[1.75] text-white">
+              <p className="mt-[28px] max-w-[900px] text-[16px] font-normal leading-[1.75] text-white">
                 Struggling with building your online store? Shopify Launchpad
                 specializes in delivering the all-inclusive Shopify solutions
                 that offers scalability, performance and flexibility needed to
@@ -50,19 +50,30 @@ export default function ServicesPage() {
               </p>
 
               {/* Buttons */}
-              <div className="mt-[27px] flex items-center gap-[18px]">
-                <button className="h-[56px] w-[194px] rounded-full border border-white text-[16px] font-semibold text-white transition hover:bg-white hover:text-[#145126]">
+              <div className="mt-[27px] flex items-center gap-[14px]">
+                <Link href="/shopify-services" className="h-[46px] w-[160px] rounded-full border border-white text-[14px] font-semibold text-white transition hover:bg-white hover:text-[#145126] flex items-center justify-center">
                   Shopify Service
-                </button>
+                </Link>
 
-                <button className="h-[56px] w-[262px] rounded-full border border-white text-[16px] font-semibold text-white transition hover:bg-white hover:text-[#145126]">
+                <Link href="/ecommerce-marketing" className="h-[46px] w-[220px] rounded-full border border-white text-[14px] font-semibold text-white transition hover:bg-white hover:text-[#145126] flex items-center justify-center">
                   E-Commerce Marketing
-                </button>
+                </Link>
 
-                <button className="h-[56px] w-[176px] rounded-full border border-white text-[16px] font-semibold text-white transition hover:bg-white hover:text-[#145126]">
+                <Link href="/done-for-you" className="h-[46px] w-[150px] rounded-full border border-white text-[14px] font-semibold text-white transition hover:bg-white hover:text-[#145126] flex items-center justify-center">
                   Done For You
-                </button>
+                </Link>
               </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="absolute right-[-80px] top-[150px] z-10 flex justify-center pt-20">
+              <Image
+                src="/shopify-donefor/1.png"
+                alt="Shopify Services illustration"
+                width={2500}
+                height={2500}
+                className="w-full max-w-[1800px] h-auto"
+              />
             </div>
 
           </div>
