@@ -551,7 +551,7 @@ export default function DropshippingPage() {
       <section className="bg-[#f5f6f7] pt-16 pb-4 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-slate-900 tracking-tight mb-3">
-            <span className="text-[#58DDB0]">Shopify</span> Pricing
+            <span className="font-normal text-gray-900">Dropshipping </span><span className="text-[#58DDB0]">Shopify Pricing Plans</span>
           </h2>
           <p className="text-center text-sm sm:text-base text-slate-500 mb-12">
             Looking for affordable Shopify options? Invest now for the growth and success of your business.
