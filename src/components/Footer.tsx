@@ -59,7 +59,7 @@ export default function Footer() {
           <div className="col-span-1 space-y-5">
             <Link href="/" className="flex items-center gap-3">
               <img
-                src="/Shopify Launchpad Images/logo-white.png"
+                src="/shopify-logo/shopifylogowhite.webp"
                 alt="Shopify Managers Logo"
                 className="h-16 w-auto"
               />
@@ -110,11 +110,11 @@ export default function Footer() {
             <ul className="space-y-4 text-slate-400 text-sm">
               <li className="flex items-center gap-3">
                 <PhoneIcon />
-                <span>{siteConfig.phone}</span>
+                <a href={`tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`} className="hover:text-white transition-colors">{siteConfig.phone}</a>
               </li>
               <li className="flex items-center gap-3">
                 <EmailIcon />
-                <span>{siteConfig.contactEmail}</span>
+                <a href={`mailto:${siteConfig.contactEmail}`} className="hover:text-white transition-colors">{siteConfig.contactEmail}</a>
               </li>
             </ul>
           </div>

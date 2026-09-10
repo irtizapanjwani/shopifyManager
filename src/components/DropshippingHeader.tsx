@@ -11,7 +11,7 @@ export default function DropshippingHeader() {
     <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
       <div className="w-full px-6 md:px-12 h-20 md:h-24 flex items-center justify-between">
         <Link href="/" aria-label="Shopify Managers Home" className="flex items-center group focus:outline-none flex-shrink-0">
-          <Image src="/Shopify Launchpad Images/logo-white.png" alt="Shopify Managers Logo" width={153} height={63} className="h-[48px] md:h-[55px] w-auto" priority />
+          <Image src="/shopify-logo/shopifylogowhite.webp" alt="Shopify Managers Logo" width={153} height={63} className="h-[48px] md:h-[55px] w-auto" priority />
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">

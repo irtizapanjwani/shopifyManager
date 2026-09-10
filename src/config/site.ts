@@ -6,8 +6,8 @@ export const siteConfig = {
   url: "https://shopifymanagers.com",
 
   // Contact — update these values before going live
-  contactEmail: "contact@shopifymanagers.com",
-  phone: "+1 (646) 396-3260",
+  contactEmail: "info@shopifymanagers.com",
+  phone: "+1 (832) 402-1715",
   locations: "New York City · San Francisco · London",
   supportHours: "24/7/365",
 
