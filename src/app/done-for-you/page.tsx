@@ -1,0 +1,284 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import Testimonials from "@/components/Testimonials";
+import CTABanner from "@/components/CTABanner";
+import FAQ from "@/components/FAQ";
+
+export default function DoneForYouPage() {
+  return (
+    <>
+      {/* ── Hero Section ── */}
+      <section
+        className="relative min-h-[800px] flex items-center pt-48 pb-20"
+        style={{
+          background:
+            "linear-gradient(180deg, #061a10 0%, #0A2515 12%, #0F3320 28%, #145A32 42%, #1B7A42 58%, #22A350 74%, #2CC968 88%, #34E077 100%)",
+        }}
+      >
+        <div className="max-w-[1400px] mx-auto px-6 md:pl-4 md:pr-6 w-full flex flex-col md:flex-row items-center justify-between gap-10">
+          {/* Left Content */}
+          <div className="flex-1 max-w-[700px] pt-22">
+            <h1
+              className="text-3xl md:text-4xl lg:text-[2.698rem] font-bold text-white leading-[1.3]"
+              style={{ fontFamily: "var(--font-poppins), sans-serif", fontWeight: 700 }}
+            >
+              From Product Hunting to Delivery,<br />We've Got You Covered.
+            </h1>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                href="/contact"
+                className="px-8 py-3 rounded-full border border-white text-white text-sm font-semibold hover:bg-white hover:text-[#19532E] transition-all duration-300"
+              >
+                Get a Free Consultation
+              </Link>
+              <Link
+                href="/pricing"
+                className="px-8 py-3 text-white text-sm font-semibold hover:text-white/80 transition-all duration-300"
+              >
+                Check Out Our Pricing
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Image */}
+          <div className="flex-1 flex justify-center md:justify-end pl-10">
+            <Image
+              src="/shopify-custom-services/1.png"
+              alt="Shopify Services illustration"
+              width={600}
+              height={600}
+              className="w-full max-w-[550px] h-auto"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Services Tabs ── */}
+      <section className="bg-white pt-16 pb-8">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="flex flex-nowrap items-center justify-center gap-8 md:gap-14 mb-24">
+            <div className="flex items-center gap-3">
+              <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 9l-2 2m0 0l2 2m-2-2h8" />
+              </svg>
+              <span className="text-xl font-bold text-gray-800">Development.</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13h16M7 17h4" />
+              </svg>
+              <span className="text-xl font-bold text-gray-800">Shopify Design.</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+              <span className="text-xl font-bold text-gray-800">Shopify CRO.</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a2 2 0 11-4 0" />
+              </svg>
+              <span className="text-xl font-bold text-gray-800">Shopify Support.</span>
+            </div>
+          </div>
+
+          {/* Green Banner */}
+          <div className="rounded-3xl bg-gradient-to-r from-[#46E680] to-[#58DDB0] pt-20 px-16 pb-0 text-center relative">
+            <h2 className="text-2xl md:text-3xl lg:text-[2.25rem] font-normal text-white leading-tight mb-6">
+              Let Us <span className="font-extrabold">Optimize Product Hunting,</span>  Sourcing, and More for Seamless Operations.
+            </h2>
+            <p className="text-white text-sm md:text-base leading-relaxed max-w-4xl mx-auto mb-8">
+              Are you ready to elevate your e-commerce business without the hassle of managing every detail yourself? Look no further than our comprehensive "Done For You" services. Let us handle everything for you, from product sourcing to shipping logistics. With our dedicated team managing the day-to-day tasks, you can focus on the big picture – growing your business and achieving your goals.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-gray-800 text-sm font-semibold hover:bg-gray-100 transition-all duration-300 mb-24"
+            >
+              Get a Free Consultation
+            </Link>
+          </div>
+
+          {/* Service Cards - Overlapping the green banner */}
+          <div className="relative z-10 -mt-24 mb-8">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="flex flex-col items-center">
+                  <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-lg mb-5">
+                    <Image
+                      src="/shopify-custom-services/5.png"
+                      alt="Shopify Design"
+                      width={140}
+                      height={140}
+                      className="w-32 h-32 object-contain"
+                    />
+                  </div>
+                  <span className="text-base font-bold text-gray-800">Shopify Design</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-lg mb-5">
+                    <Image
+                      src="/shopify-custom-services/6.png"
+                      alt="Shopify Development"
+                      width={140}
+                      height={140}
+                      className="w-32 h-32 object-contain"
+                    />
+                  </div>
+                  <span className="text-base font-bold text-gray-800">Shopify Development</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-lg mb-5">
+                    <Image
+                      src="/shopify-custom-services/7.png"
+                      alt="Shopify Migration"
+                      width={140}
+                      height={140}
+                      className="w-32 h-32 object-contain"
+                    />
+                  </div>
+                  <span className="text-base font-bold text-gray-800">Shopify Migration</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-lg mb-5">
+                    <Image
+                      src="/shopify-custom-services/8.png"
+                      alt="Support and Maintenance"
+                      width={140}
+                      height={140}
+                      className="w-32 h-32 object-contain"
+                    />
+                  </div>
+                  <span className="text-base font-bold text-gray-800">Support and<br />Maintenance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Customized Solutions Section */}
+          <div className="pt-20 pb-4 text-center">
+            <div className="max-w-4xl mx-auto px-6">
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
+                <span className="text-gray-800 font-normal">Check Out <span className="text-[#58DDB0] font-bold">Our E-Commerce Success Stories</span> </span>
+              </h2>
+              <p className="text-gray-600 text-base leading-relaxed max-w-3xl mx-auto">
+                We combine industry expertise with innovative tactics to create tailored strategies that drive measurable outcomes for your business. Whether you aim to increase sales, improve ROI, or expand your market reach, our team is committed to delivering the results you need to succeed. Achieve your business goals and exceed expectations with our impactful e-commerce strategies. Contact us today!
+              </p>
+            </div>
+          </div>
+          <div className="w-full flex items-center justify-center py-2 pb-25">
+            <Image
+              src="/shopify-donefor/23.png"
+              alt="Client Logos"
+              width={1200}
+              height={200}
+              className="w-full max-w-4xl h-auto object-contain"
+            />
+          </div>
+
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <div className="bg-[#1a2332]">
+        <section className="py-20">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div className="grid md:grid-cols-3 gap-12">
+              {/* Card 1 */}
+              <div className="text-center flex flex-col h-full">
+                <div className="flex justify-center mb-8 h-[250px]">
+                  <Image
+                    src="/shopify-custom-services/10.png"
+                    alt="Shopify Design Solutions"
+                    width={300}
+                    height={250}
+                    className="h-[250px] w-auto object-contain"
+                  />
+                </div>
+                <p className="text-white text-sm mb-3">Ready to Craft Your E-commerce Strategy?</p>
+                <h3 className="text-2xl font-semibold leading-tight mb-5">
+                  <span className="text-white">Discovery and Planning </span>
+                </h3>
+                <p className="text-white text-sm leading-relaxed mb-6">
+                  We start by understanding your business objectives and target audience preferences. Through market research, competitor analysis, and customer profiling, we develop a strategic roadmap designed to achieve your goals. From identifying high-demand products to optimizing shipping logistics and refining product-hunting techniques, our plan aims to maximize your Shopify store's potential for success.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-3 rounded-full border border-gray-500 text-white text-sm font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 mt-auto"
+                >
+                  Contact Us
+                </Link>
+              </div>
+
+              {/* Card 2 */}
+              <div className="text-center flex flex-col h-full">
+                <div className="flex justify-center mb-8 h-[250px]">
+                  <Image
+                    src="/shopify-custom-services/11.png"
+                    alt="Shopify Development"
+                    width={300}
+                    height={250}
+                    className="h-[250px] w-auto object-contain"
+                  />
+                </div>
+                <p className="text-white text-sm mb-3">Let's Turn Vision into Reality</p>
+                <h3 className="text-2xl font-semibold leading-tight mb-5">
+                  <span className="text-white">Execution and Implementation</span> 
+                </h3>
+                <p className="text-white text-sm leading-relaxed mb-6 font-semibold">
+                  We take the detailed strategies developed in the discovery and planning phase and bring them to life. If you're looking for logistics services, we establish efficient shipping and fulfillment processes, including selecting shipping carriers, optimizing packaging solutions, and managing order tracking. Our experts are here to support you every step of the way, providing you with the guidance and resources you need to succeed.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-3 rounded-full border border-gray-500 text-white text-sm font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 mt-auto"
+                >
+                  Contact Us
+                </Link>
+              </div>
+
+              {/* Card 3 */}
+              <div className="text-center flex flex-col h-full">
+                <div className="flex justify-center mb-8 h-[250px]">
+                  <Image
+                    src="/shopify-custom-services/12.png"
+                    alt="Maintenance Services"
+                    width={300}
+                    height={250}
+                    className="h-[200px] w-auto object-contain"
+                  />
+                </div>
+                <p className="text-white text-sm mb-3">Boost Your E-Commerce Shopify Experience</p>
+                <h3 className="text-2xl font-semibold leading-tight mb-5">
+                  <span className="text-white">Maintenance and Support </span>
+                </h3>
+                <p className="text-white text-sm leading-relaxed mb-6">
+                  Beyond just fixing issues, we provide round-the-clock support to optimize your store's performance. We handle the day-to-day operations, including updates, security patches, and technical troubleshooting, so you can focus on driving your business forward. With our proactive approach and personalized assistance, you can trust us to keep your Shopify store running smoothly, ensuring a seamless experience for you and your customers.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-3 rounded-full border border-gray-500 text-white text-sm font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 mt-auto"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* CTA Banner */}
+      <CTABanner />
+
+      {/* FAQ Section */}
+      <FAQ />
+
+    </>
+  );
+}

@@ -18,7 +18,7 @@ const navLinks = [
 const serviceLinks = [
   { label: "Shopify Services", href: "/shopify-services" },
   { label: "E-Commerce Marketing", href: "/ecommerce-marketing" },
-  { label: "Done For You", href: "/services" },
+  { label: "Done For You", href: "/done-for-you" },
 ] as const;
 
 export default function Header() {
