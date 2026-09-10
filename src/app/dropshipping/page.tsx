@@ -205,55 +205,257 @@ const trip = [...dropshippingPlans, ...dropshippingPlans, ...dropshippingPlans];
 function Card({ plan }: { plan: typeof dropshippingPlans[0] }) {
   return (
     <div
-      className="bg-white rounded-[20px] overflow-visible border border-slate-200/60 shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col h-[680px] hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-shadow duration-300"
+      className="bg-white rounded-[20px] overflow-visible border border-slate-200/60 shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col h-[740px] hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-shadow duration-300"
       style={{ fontFamily: "var(--font-poppins), sans-serif" }}
     >
       {/* Inner Header Container */}
-      <div className="mx-3 mt-3 rounded-[16px] bg-[#E9F0ED] px-7 py-7 transition-colors duration-300 hover:bg-[#95BF47] group min-h-[200px] flex flex-col justify-between">
+      <div className="mx-3 mt-3 rounded-[16px] bg-[#E9F0ED] px-7 py-8 transition-colors duration-300 hover:bg-[#95BF47] group min-h-[250px] flex flex-col justify-between">
         <div>
-          <span className="inline-block px-4 py-1.5 bg-white border border-slate-300 group-hover:border-white/40 rounded-md text-[14px] font-semibold text-[#065F46] mb-4 transition-colors duration-300">
+          <span className="inline-block px-3 py-1 bg-white border border-slate-300 group-hover:border-white/40 rounded-md text-[12px] font-semibold text-[#065F46] mb-5 transition-colors duration-300">
             {plan.name}
           </span>
-          <p className="text-[15px] font-normal text-[#5F718A] group-hover:text-white/90 mb-5 transition-colors duration-300" style={{ lineHeight: "1.55" }}>
+          <p className="text-[13px] font-semibold text-black group-hover:text-white mb-4 transition-colors duration-300" style={{ lineHeight: "1.55", fontFamily: "var(--font-inter), sans-serif" }}>
             {plan.description}
           </p>
         </div>
-        <div className="flex items-baseline gap-2">
-          <span className="text-[40px] font-normal text-[#065F46] group-hover:text-white leading-none transition-colors duration-300">{plan.price}</span>
-          <span className="text-[16px] font-normal text-[#8FA2BA] group-hover:text-white/60 line-through transition-colors duration-300">{plan.originalPrice}</span>
+        <div className="flex items-baseline gap-2 mt-4">
+          <span className="text-[28px] font-normal text-[#065F46] group-hover:text-white leading-none transition-colors duration-300">{plan.price}</span>
+          <span className="text-[14px] font-normal text-[#8FA2BA] group-hover:text-white/60 line-through transition-colors duration-300">{plan.originalPrice}</span>
         </div>
       </div>
 
       {/* Scrollable Feature List */}
       <div
-        className="px-7 pt-6 pb-3 flex-1 overflow-y-auto relative"
+        className="px-7 pt-6 pb-4 flex-1 overflow-y-auto relative"
         style={{ scrollbarWidth: "thin", scrollbarColor: "#59DFAB #DADADA" }}
       >
-        <ul className="space-y-[10px]">
+        <ul className="space-y-[14px]">
           {plan.features.map((f) => (
-            <li key={f} className="flex items-start gap-2.5 text-[15px] font-normal text-[#5F718A]" style={{ lineHeight: "1.55", fontFamily: "var(--font-inter), sans-serif" }}>
-              <span className="text-[#95BF47] mt-[3px] flex-shrink-0 text-[8px] text-black text-sm leading-relaxed mb-6" style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700 }}>•</span>
-              <span style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 400 }}>{f}</span>
+            <li key={f} className="flex items-start gap-2.5 text-[15px] font-medium text-black" style={{ lineHeight: "1.5", fontFamily: "var(--font-inter), sans-serif" }}>
+              <span className="flex-shrink-0 text-black font-bold text-[16px] leading-tight">•</span>
+              <span className="text-black font-medium">{f}</span>
             </li>
           ))}
         </ul>
       </div>
 
       {/* Bottom Buttons */}
-      <div className="px-5 pb-5 pt-2 flex gap-3">
-        <button className="flex-1 py-2.5 rounded bg-[#95BF47] text-white text-[15px] font-semibold hover:bg-[#85b336] transition-colors duration-300 cursor-pointer">
+      <div className="px-5 pt-3 pb-3 flex gap-3">
+        <button className="flex-1 py-3 rounded-lg bg-[#95BF47] text-white text-[15px] font-semibold hover:bg-[#85b336] transition-colors duration-300 cursor-pointer">
           Get Started
         </button>
-        <button className="flex-1 py-2.5 rounded-md border border-slate-300 text-[#5D718C] text-[15px] font-semibold hover:border-[#95BF47] hover:text-[#95BF47] transition-colors duration-300 cursor-pointer">
+        <button className="flex-1 py-3 rounded-lg border border-slate-300 text-[#374151] text-[15px] font-semibold hover:border-[#95BF47] hover:text-[#95BF47] transition-colors duration-300 cursor-pointer">
           Chat Now
         </button>
       </div>
-      <div className="px-5 pb-4 text-center">
-        <a href="#" className="text-[13px] text-[#195f35] underline hover:text-[#95BF47] transition-colors duration-300" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+      <div className="px-5 pt-2 pb-16 text-center">
+        <a href="#" className="text-[14px] font-medium text-[#195f35] underline hover:text-[#95BF47] transition-colors duration-300" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
           View Details
         </a>
       </div>
     </div>
+  );
+}
+
+const comparisonRows = [
+  {
+    feature: "Shopify Store Setup",
+    starter: { type: "check", text: "Basic" },
+    growth: { type: "check", text: "Advanced" },
+    pro: { type: "check", text: "Premium Design" },
+    empire: { type: "check", text: "Custom Premium Build" },
+  },
+  {
+    feature: "Mobile Optimization",
+    starter: { type: "check" },
+    growth: { type: "check" },
+    pro: { type: "check" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "Legal Pages (Privacy, Refund, TOS)",
+    starter: { type: "check" },
+    growth: { type: "check" },
+    pro: { type: "check" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "Dropshipping App Integration",
+    starter: { type: "check", text: "Basic (DSers)" },
+    growth: { type: "check", text: "Best Options" },
+    pro: { type: "check", text: "Advanced Integrations" },
+    empire: { type: "check", text: "Private Supplier Setup" },
+  },
+  {
+    feature: "Product Import & Setup",
+    starter: { type: "check", text: "10 Products" },
+    growth: { type: "check", text: "20 Products" },
+    pro: { type: "check", text: "40 Products" },
+    empire: { type: "check", text: "100+ Fully Optimized" },
+  },
+  {
+    feature: "Payment Gateway Setup",
+    starter: { type: "check" },
+    growth: { type: "check" },
+    pro: { type: "check" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "Branded Logo Design",
+    starter: { type: "cross" },
+    growth: { type: "check", text: "Basic Logo" },
+    pro: { type: "check", text: "Custom Logo" },
+    empire: { type: "check", text: "Premium Branding Kit" },
+  },
+  {
+    feature: "Custom Homepage Design",
+    starter: { type: "cross" },
+    growth: { type: "check" },
+    pro: { type: "check" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "On-Page SEO Optimization",
+    starter: { type: "cross" },
+    growth: { type: "check", text: "Basic SEO" },
+    pro: { type: "check", text: "Full SEO" },
+    empire: { type: "check", text: "Full SEO + Speed Boost" },
+  },
+  {
+    feature: "Automated Order Fulfillment Setup",
+    starter: { type: "cross" },
+    growth: { type: "check" },
+    pro: { type: "check" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "Email Capture & Basic Popups",
+    starter: { type: "cross" },
+    growth: { type: "check" },
+    pro: { type: "check" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "Social Media Integration",
+    starter: { type: "cross" },
+    growth: { type: "check", text: "Basic" },
+    pro: { type: "check", text: "Full Setup" },
+    empire: { type: "check", text: "Full Setup + Strategy" },
+  },
+  {
+    feature: "Post-Launch Support",
+    starter: { type: "cross" },
+    growth: { type: "check", text: "15 Days" },
+    pro: { type: "check", text: "30 Days" },
+    empire: { type: "check", text: "60 Days + Concierge" },
+  },
+  {
+    feature: "Abandoned Cart Recovery Setup",
+    starter: { type: "cross" },
+    growth: { type: "cross" },
+    pro: { type: "check" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "Facebook Pixel & Google Analytics",
+    starter: { type: "cross" },
+    growth: { type: "cross" },
+    pro: { type: "check" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "Custom Branding (Color Palette, Fonts, Guidelines)",
+    starter: { type: "cross" },
+    growth: { type: "cross" },
+    pro: { type: "check" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "Conversion Boosters (Urgency, Reviews, Trust Badges)",
+    starter: { type: "cross" },
+    growth: { type: "cross" },
+    pro: { type: "check" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "Strategy Call",
+    starter: { type: "cross" },
+    growth: { type: "cross" },
+    pro: { type: "check", text: "30-Min" },
+    empire: { type: "check", text: "60-Min" },
+  },
+  {
+    feature: "Brand Domain & Email Setup",
+    starter: { type: "cross" },
+    growth: { type: "cross" },
+    pro: { type: "cross" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "Premium Apps & Plugin Integrations",
+    starter: { type: "cross" },
+    growth: { type: "cross" },
+    pro: { type: "cross" },
+    empire: { type: "check" },
+  },
+  {
+    feature: "Free Product Vendors",
+    starter: { type: "cross" },
+    growth: { type: "cross" },
+    pro: { type: "cross" },
+    empire: { type: "check", text: "3–5" },
+  },
+  {
+    feature: "Facebook & Google Ad Creatives (Static)",
+    starter: { type: "cross" },
+    growth: { type: "cross" },
+    pro: { type: "cross" },
+    empire: { type: "check", text: "Full Funnel Ads" },
+  },
+  {
+    feature: "TikTok & Reels Short Videos",
+    starter: { type: "cross" },
+    growth: { type: "cross" },
+    pro: { type: "cross" },
+    empire: { type: "check", text: "5 Branded Shorts" },
+  },
+  {
+    feature: "Full Brand Identity & Store Strategy Plan",
+    starter: { type: "cross" },
+    growth: { type: "cross" },
+    pro: { type: "cross" },
+    empire: { type: "check" },
+  },
+] as const;
+
+function TableCell({
+  cell,
+  isLast,
+}: {
+  cell: { type: string; text?: string };
+  isLast?: boolean;
+}) {
+  return (
+    <td
+      className={`py-2 px-2 text-center border-r border-gray-200 ${
+        isLast ? "border-r-0" : ""
+      } hover:bg-[#a3a3a3] group/cell transition-colors duration-150 cursor-pointer`}
+    >
+      {cell.type === "check" ? (
+        <span className="text-[#16a34a] text-[14px] font-bold group-hover/cell:text-white transition-colors duration-150">
+          ✓
+        </span>
+      ) : (
+        <span className="text-[#ef4444] text-[12px] group-hover/cell:text-white transition-colors duration-150">
+          ✕
+        </span>
+      )}
+      {cell.text && (
+        <div className="text-[11px] font-normal text-black mt-0.5 group-hover/cell:text-white transition-colors duration-150">
+          {cell.text}
+        </div>
+      )}
+    </td>
   );
 }
 
@@ -346,10 +548,10 @@ export default function DropshippingPage() {
       </section>
 
       {/* Dropshipping Pricing Section */}
-      <section className="bg-[#f5f6f7] py-20 overflow-hidden">
+      <section className="bg-[#f5f6f7] pt-16 pb-4 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-slate-900 tracking-tight mb-3">
-            Dropshipping <span className="text-[#58DDB0]">Shopify Pricing Plans</span>
+            <span className="text-[#58DDB0]">Shopify</span> Pricing
           </h2>
           <p className="text-center text-sm sm:text-base text-slate-500 mb-12">
             Looking for affordable Shopify options? Invest now for the growth and success of your business.
@@ -403,200 +605,50 @@ export default function DropshippingPage() {
       </section>
 
       {/* Features Comparison Table */}
-      <section className="bg-[#f5f6f7] py-16">
+      <section className="bg-[#f5f6f7] pt-2 pb-16">
         <div className="w-full px-0">
-          <div className="bg-white rounded-none shadow-none border-0 overflow-hidden">
-            <table className="w-full">
+          <div className="bg-white rounded-none shadow-none border-t border-b border-gray-200 overflow-x-auto">
+            <table className="w-full border-collapse" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
               <thead>
-                <tr className="border-b border-slate-300">
-                  <th className="text-left py-6 px-6 text-[16px] font-semibold text-black w-[25%] border-r border-slate-300">Features</th>
-                  <th className="text-center py-6 px-4 w-[18.75%] border-r border-slate-300">
-                    <div className="text-[16px] font-semibold text-black">Starter</div>
-                    <div className="text-[22px] font-bold text-black mt-1">$1200</div>
+                <tr className="border-b border-gray-200 bg-white">
+                  <th className="text-left py-3.5 px-5 md:px-6 text-[14px] font-bold text-black w-[24%] border-r border-gray-200 hover:bg-[#a3a3a3] hover:text-white transition-colors duration-150 cursor-pointer">
+                    Features
                   </th>
-                  <th className="text-center py-6 px-4 w-[18.75%] border-r border-slate-300">
-                    <div className="text-[16px] font-semibold text-black">Growth</div>
-                    <div className="text-[22px] font-bold text-black mt-1">$2500</div>
+                  <th className="text-center py-3.5 px-3 w-[19%] border-r border-gray-200 hover:bg-[#a3a3a3] group/th transition-colors duration-150 cursor-pointer">
+                    <div className="text-[14px] font-bold text-black group-hover/th:text-white transition-colors duration-150">Starter</div>
+                    <div className="text-[16px] font-bold text-black mt-0.5 group-hover/th:text-white transition-colors duration-150">$1200</div>
                   </th>
-                  <th className="text-center py-6 px-4 w-[18.75%] border-r border-slate-300">
-                    <div className="text-[16px] font-semibold text-black">Pro Brand</div>
-                    <div className="text-[22px] font-bold text-black mt-1">$5000</div>
+                  <th className="text-center py-3.5 px-3 w-[19%] border-r border-gray-200 hover:bg-[#a3a3a3] group/th transition-colors duration-150 cursor-pointer">
+                    <div className="text-[14px] font-bold text-black group-hover/th:text-white transition-colors duration-150">Growth</div>
+                    <div className="text-[16px] font-bold text-black mt-0.5 group-hover/th:text-white transition-colors duration-150">$2500</div>
                   </th>
-                  <th className="text-center py-6 px-4 w-[18.75%]">
-                    <div className="text-[16px] font-semibold text-black">Empire</div>
-                    <div className="text-[22px] font-bold text-black mt-1">$11000</div>
+                  <th className="text-center py-3.5 px-3 w-[19%] border-r border-gray-200 hover:bg-[#a3a3a3] group/th transition-colors duration-150 cursor-pointer">
+                    <div className="text-[14px] font-bold text-black group-hover/th:text-white transition-colors duration-150">Pro Brand</div>
+                    <div className="text-[16px] font-bold text-black mt-0.5 group-hover/th:text-white transition-colors duration-150">$5000</div>
+                  </th>
+                  <th className="text-center py-3.5 px-3 w-[19%] hover:bg-[#a3a3a3] group/th transition-colors duration-150 cursor-pointer">
+                    <div className="text-[14px] font-bold text-black group-hover/th:text-white transition-colors duration-150">Empire</div>
+                    <div className="text-[16px] font-bold text-black mt-0.5 group-hover/th:text-white transition-colors duration-150">$11000</div>
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Shopify Store Setup</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Basic</div></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Advanced</div></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Premium Design</div></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Custom Premium Build</div></td>
-                </tr>
-                <tr className="border-b border-slate-300 bg-gray-100">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Mobile Optimization</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Legal Pages (Privacy, Refund, TOS)</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300 bg-gray-100">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Dropshipping App Integration</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Basic (DSers)</div></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Best Options</div></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Advanced Integrations</div></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Private Supplier Setup</div></td>
-                </tr>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Product Import & Setup</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">10 Products</div></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">20 Products</div></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">40 Products</div></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">100+ Fully Optimized</div></td>
-                </tr>
-                <tr className="border-b border-slate-300 bg-gray-100">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Payment Gateway Setup</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Branded Logo Design</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Basic Logo</div></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Custom Logo</div></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Premium Branding Kit</div></td>
-                </tr>
-                <tr className="border-b border-slate-300 bg-gray-100">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Custom Homepage Design</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">On-Page SEO Optimization</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Basic SEO</div></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Full SEO</div></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Full SEO + Speed Boost</div></td>
-                </tr>
-                <tr className="border-b border-slate-300 bg-gray-100">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Automated Order Fulfillment Setup</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Email Capture & Basic Popups</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300 bg-gray-100">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Social Media Integration</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Basic</div></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Full Setup</div></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Full Setup + Strategy</div></td>
-                </tr>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Post-Launch Support</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">15 Days</div></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">30 Days</div></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">60 Days + Concierge</div></td>
-                </tr>
-                <tr className="border-b border-slate-300 bg-gray-100">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Abandoned Cart Recovery Setup</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Facebook Pixel & Google Analytics</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300 bg-gray-100">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Custom Branding (Color Palette, Fonts, Guidelines)</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Conversion Boosters (Urgency, Reviews, Trust Badges)</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300 bg-gray-100">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Strategy Call</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">30-Min</div></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">60-Min</div></td>
-                </tr>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Brand Domain & Email Setup</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300 bg-gray-100">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Premium Apps & Plugin Integrations</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Free Product Vendors</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">3–5</div></td>
-                </tr>
-                <tr className="border-b border-slate-300 bg-gray-100">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Facebook & Google Ad Creatives (Static)</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">Full Funnel Ads</div></td>
-                </tr>
-                <tr className="border-b border-slate-300">
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">TikTok & Reels Short Videos</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span><div className="text-[13px] text-gray-500 mt-0.5">5 Branded Shorts</div></td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-6 text-[14px] font-medium text-black border-r border-slate-300">Full Brand Identity & Store Strategy Plan</td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center border-r border-slate-300"><span className="text-[#ef4444] text-[14px]">✕</span></td>
-                  <td className="py-3 px-4 text-center"><span className="text-[#22c55e] text-[18px]">✓</span></td>
-                </tr>
+                {comparisonRows.map((row, idx) => (
+                  <tr
+                    key={row.feature}
+                    className={`border-b border-gray-200 ${
+                      idx % 2 === 0 ? "bg-white" : "bg-[#f4f5f7]"
+                    }`}
+                  >
+                    <td className="py-2.5 px-5 md:px-6 text-[12.5px] font-semibold text-black border-r border-gray-200 hover:bg-[#a3a3a3] hover:text-white transition-colors duration-150 cursor-pointer">
+                      {row.feature}
+                    </td>
+                    <TableCell cell={row.starter} />
+                    <TableCell cell={row.growth} />
+                    <TableCell cell={row.pro} />
+                    <TableCell cell={row.empire} isLast />
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
