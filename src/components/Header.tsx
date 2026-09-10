@@ -58,7 +58,7 @@ export default function Header() {
               {servicesOpen && (
                 <div className="absolute left-0 top-full w-56 bg-[#1a2e1a] shadow-2xl rounded-xl border border-[#2d4a35] p-2 z-50">
                   {serviceLinks.map((svc) => (
-                    <Link key={svc} href="/services" className="block px-4 py-2.5 rounded-lg text-xs font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors">
+                    <Link key={svc} href="/shopify-services" className="block px-4 py-2.5 rounded-lg text-xs font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors">
                       {svc}
                     </Link>
                   ))}
