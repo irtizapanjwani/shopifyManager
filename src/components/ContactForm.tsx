@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { siteConfig } from "@/config/site";
+import { useToast } from "./Toast";
 
 interface FormState {
   name: string;
@@ -12,7 +13,7 @@ interface FormState {
   consent: boolean;
 }
 
-type Status = "idle" | "loading" | "success" | "error";
+type Status = "idle" | "loading" | "error";
 
 const budgetOptions = [
   "$2,500 – $5,000",
@@ -25,6 +26,7 @@ const inputClass =
   "w-full bg-[#08130e] border border-[#234232] rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-[#9bc43f] transition-colors";
 
 export default function ContactForm() {
+  const { showToast } = useToast();
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
@@ -60,7 +62,22 @@ export default function ContactForm() {
       });
 
       if (res.ok) {
-        setStatus("success");
+        showToast({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          type: "success",
+          duration: 10000,
+        });
+
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          budget: budgetOptions[0],
+          message: "",
+          consent: false,
+        });
+        setStatus("idle");
       } else {
         const data = (await res.json()) as { error?: string };
         setErrorMsg(data.error ?? "Something went wrong. Please try again.");
@@ -70,22 +87,6 @@ export default function ContactForm() {
       setErrorMsg("Network error. Please check your connection and try again.");
       setStatus("error");
     }
-  }
-
-  if (status === "success") {
-    return (
-      <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
-        <div className="w-16 h-16 rounded-full bg-[#9bc43f]/20 flex items-center justify-center">
-          <svg className="w-8 h-8 text-[#9bc43f]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-        <h4 className="text-xl font-bold text-white">Message Sent!</h4>
-        <p className="text-sm text-slate-300 max-w-xs">
-          A Shopify Managers specialist will contact you within 2 business hours.
-        </p>
-      </div>
-    );
   }
 
   return (
@@ -100,6 +101,7 @@ export default function ContactForm() {
             name="name"
             type="text"
             required
+            disabled={status === "loading"}
             value={form.name}
             onChange={handleChange}
             placeholder="Alexander Vance"
@@ -115,6 +117,7 @@ export default function ContactForm() {
             name="email"
             type="email"
             required
+            disabled={status === "loading"}
             value={form.email}
             onChange={handleChange}
             placeholder={siteConfig.contactEmail}
@@ -132,6 +135,7 @@ export default function ContactForm() {
             id="cf-phone"
             name="phone"
             type="tel"
+            disabled={status === "loading"}
             value={form.phone}
             onChange={handleChange}
             placeholder="+1 (555) 000-0000"
@@ -145,6 +149,7 @@ export default function ContactForm() {
           <select
             id="cf-budget"
             name="budget"
+            disabled={status === "loading"}
             value={form.budget}
             onChange={handleChange}
             className={inputClass}
@@ -166,6 +171,7 @@ export default function ContactForm() {
           id="cf-message"
           name="message"
           rows={3}
+          disabled={status === "loading"}
           value={form.message}
           onChange={handleChange}
           placeholder="Tell us about your brand, requirements, or current store URL..."
@@ -179,6 +185,7 @@ export default function ContactForm() {
           name="consent"
           type="checkbox"
           required
+          disabled={status === "loading"}
           checked={form.consent}
           onChange={handleChange}
           className="mt-0.5 w-4 h-4 rounded border-[#234232] bg-[#08130e] accent-[#008060] cursor-pointer"
@@ -197,9 +204,19 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full py-3.5 rounded-full text-sm font-bold bg-[#9bc43f] text-[#08130e] hover:bg-[#a6ce46] transition-colors shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full py-3.5 rounded-full text-sm font-bold bg-[#9bc43f] text-[#08130e] hover:bg-[#a6ce46] transition-colors shadow-lg disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
-        {status === "loading" ? "Sending…" : "Get Started"}
+        {status === "loading" ? (
+          <>
+            <svg className="animate-spin h-4 w-4 text-[#08130e]" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+            </svg>
+            <span>Sending…</span>
+          </>
+        ) : (
+          "Get Started"
+        )}
       </button>
     </form>
   );

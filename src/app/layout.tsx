@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DropshippingHeader from "@/components/DropshippingHeader";
+import { ToastProvider } from "@/components/Toast";
 import { usePathname } from "next/navigation";
 
 const manrope = Manrope({
@@ -36,9 +37,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${manrope.variable} ${inter.variable} ${poppins.variable} scroll-smooth`}
     >
       <body className={`${manrope.className} min-h-full flex flex-col font-sans antialiased bg-[#fbfdfc]`}>
-        {isDropshipping ? <DropshippingHeader /> : <Header />}
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ToastProvider>
+          {isDropshipping ? <DropshippingHeader /> : <Header />}
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ToastProvider>
       </body>
     </html>
   );
