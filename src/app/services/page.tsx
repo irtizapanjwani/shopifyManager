@@ -66,13 +66,13 @@ export default function ServicesPage() {
             </div>
 
             {/* Right Image */}
-            <div className="absolute right-[-80px] top-[150px] z-10 flex justify-center pt-20">
+            <div className="absolute right-[40px] top-[100px] z-10 flex justify-center pt-20">
               <Image
                 src="/shopify-donefor/1.png"
                 alt="Shopify Services illustration"
                 width={2500}
                 height={2500}
-                className="w-full max-w-[1800px] h-auto"
+                className="w-full max-w-[900px] max-h-[550px] h-auto"
               />
             </div>
 
@@ -81,10 +81,10 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Clients That Worked with Us ── */}
-      <section className="bg-white py-20">
+      <section className="bg-white pt-20 pb-0 -mb-4">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-[46px] md:text-[46px] font-normal text-[#0d3d23] mb-12" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
-            Clients That <span className="text-[#59DFAB]">Worked with Us</span>
+          <h2 className="text-[36px] md:text-[36px] font-normal text-[#0d3d23] mb-12" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
+            Clients That <span className="text-[#59DFAB] font-bold">Worked with Us</span>
           </h2>
 
           {/* Logo strip */}
@@ -101,7 +101,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Shopify Store Development ── */}
-      <section className="bg-white px-6 py-20 sm:py-28">
+      <section className="bg-white px-6 pt-20 pb-8 sm:pt-28 sm:pb-8">
         <div className="mx-auto max-w-[900px] pb-12 lg:pb-16">
           <div className="relative z-10 overflow-hidden rounded-[36px] bg-gradient-to-b from-[#59DFAB] to-[#46E680] px-7 py-8 text-white shadow-sm sm:px-10 lg:ml-3 lg:-rotate-[4deg] lg:px-12 lg:py-8">
             <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_.8fr]">

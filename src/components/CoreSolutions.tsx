@@ -29,11 +29,11 @@ const solutions = [
 export default function CoreSolutions() {
   return (
     <section
-      className="py-20 bg-[#292f40]"
+      className="pt-20 pb-12 bg-[#292f40]"
       aria-labelledby="solutions-heading"
     >
       <div className="w-full px-[72px]">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="w-full text-center mb-8">
           <h2
             id="solutions-heading"
             className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight"
@@ -41,7 +41,7 @@ export default function CoreSolutions() {
             What We Have in{" "}
             <span className="text-[#59DFAB]">Store for You</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-300">
+          <p className="mt-4 text-xs sm:text-sm text-white whitespace-nowrap text-center">
             If you&apos;re ready to start your e-commerce business, we have the best e-commerce
             solutions to help you grow your business to success in a short span of time.
           </p>

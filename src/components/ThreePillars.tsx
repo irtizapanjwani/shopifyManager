@@ -41,7 +41,7 @@ const pillars: Pillar[] = [
 ];
 
 export default function ThreePillars() {
-  const [activeId, setActiveId] = useState<string>("grow");
+  const [activeId, setActiveId] = useState<string>("build");
 
   return (
     <section

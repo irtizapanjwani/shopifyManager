@@ -6,6 +6,7 @@ import CoreSolutions from "@/components/CoreSolutions";
 import ThreePillars from "@/components/ThreePillars";
 import WhyUs from "@/components/WhyUs";
 import PortfolioShowcase from "@/components/PortfolioShowcase";
+import EssentialFeatures from "@/components/EssentialFeatures";
 import PricingSection from "@/components/PricingSection";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -22,6 +23,7 @@ export default function Home() {
       <CoreSolutions />
       <PortfolioShowcase />
       <WhyUs />
+      <EssentialFeatures />
       <AwardsStrip />
       <PricingSection />
       <Testimonials />

@@ -47,7 +47,7 @@ export default function Header() {
         </Link>
 
         <div className="hidden lg:flex items-center gap-6">
-          <nav className="flex items-center space-x-8 text-sm font-medium text-white" aria-label="Main navigation">
+          <nav className="flex items-center space-x-8 text-sm font-semibold text-white" aria-label="Main navigation">
             <div className="relative group cursor-pointer" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
               <Link href="/services" className="flex items-center gap-1 hover:text-[#9bc43f] transition-colors py-2">
                 Services

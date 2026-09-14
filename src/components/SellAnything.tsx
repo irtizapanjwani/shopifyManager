@@ -62,19 +62,23 @@ export default function SellAnything() {
     <section className="bg-white pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 overflow-hidden">
       <div className="w-full px-[72px]">
         {/* Heading */}
-        <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
-          <span className="text-[#08130e]">Sell Anything. </span>
+        <h2 className="text-center text-xl sm:text-2xl lg:text-[34px] font-bold tracking-tight leading-tight">
+          <span className="text-[#08130e] font-medium">Sell Anything. </span>
           <span className="text-[#59DFAB]">Make Profit.</span>
         </h2>
 
         {/* Subtitle */}
-        <p className="text-center text-base sm:text-lg text-[#3a3a3a] mt-4 max-w-2xl mx-auto font-normal leading-relaxed">
+        <p className="text-center text-sm sm:text-base text-[#3a3a3a] mt-1 max-w-2xl mx-auto font-normal leading-relaxed">
           We&apos;ve built Shopify stores for various industries.
         </p>
       </div>
 
       {/* Scrolling image row */}
-      <div className="mt-8 sm:mt-10">
+      <div className="mt-14 sm:mt-16 relative">
+        {/* Left solid white cover */}
+        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-12 bg-white z-10 pointer-events-none" />
+        {/* Right solid white cover */}
+        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-12 bg-white z-10 pointer-events-none" />
         <div className="flex gap-5 sm:gap-6 lg:gap-7 animate-marquee w-max">
           {doubled.map((panel, i) => (
             <PanelCard

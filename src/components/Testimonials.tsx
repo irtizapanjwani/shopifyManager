@@ -173,7 +173,7 @@ function PlatformLogo({ platform }: { platform: string }) {
       alt="Google"
       width={100}
       height={34}
-      className="h-8 w-auto"
+      className="h-6 w-auto"
     />
   );
 }
