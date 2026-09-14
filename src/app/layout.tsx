@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import DropshippingHeader from "@/components/DropshippingHeader";
 import { ToastProvider } from "@/components/Toast";
 import { usePathname } from "next/navigation";
+import Script from "next/script";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -21,8 +22,8 @@ const inter = Inter({
 });
 
 const poppins = Poppins({
-  subsets: ["latin"],
   weight: ["400", "500", "700", "800"],
+  subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
 });
@@ -42,6 +43,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="flex-1">{children}</main>
           <Footer />
         </ToastProvider>
+        <Script
+          id="zohodeskasap"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `var d=document;var s=d.createElement("script");s.type="text/javascript";s.id="zohodeskasapscript";s.defer=true;s.src="https://desk.zoho.com/portal/api/web/asapApp/1474200000000427025?orgId=939185184";var t=d.getElementsByTagName("script")[0];if(t&&t.parentNode){t.parentNode.insertBefore(s,t);}else{d.head.appendChild(s);}window.ZohoDeskAsapReady=function(s){var e=window.ZohoDeskAsap__asyncalls=window.ZohoDeskAsap__asyncalls||[];window.ZohoDeskAsapReadyStatus?(s&&e.push(s),e.forEach(function(call){call&&call();}),window.ZohoDeskAsap__asyncalls=null):s&&e.push(s);};`,
+          }}
+        />
       </body>
     </html>
   );
