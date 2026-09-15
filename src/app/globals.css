@@ -145,3 +145,16 @@ details > summary {
   animation: toastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* ─── Zoho SalesIQ Chat Window Size ──────────────────────── */
+.zsiq_floatmain,
+.zsiq_floatmain.siq_bR,
+.zsiq-newtheme.siqembed.zls-sptwndw,
+div[id*="siq"][style*="height"] {
+  max-height: 350px !important;
+  height: 350px !important;
+}
+
+.zsiq_floatmain iframe,
+.zsiq-newtheme iframe {
+  max-height: 350px !important;
+}

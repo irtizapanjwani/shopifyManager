@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import PricingModal from "@/components/PricingModal";
 import { useState } from "react";
+import { openZohoDeskChat } from "@/lib/zohoDesk";
 
 interface PricingTier {
   name: string;
@@ -151,7 +152,7 @@ function PackageDetailsContent() {
                   Get Started
                 </button>
                 <button
-                  onClick={() => window.dispatchEvent(new Event("openHelpChat"))}
+                  onClick={() => openZohoDeskChat()}
                   className="flex-1 py-3 rounded-full border-2 border-white bg-white text-[#58DDB0] font-bold text-sm hover:bg-transparent hover:text-white transition-colors"
                 >
                   <span className="inline-flex items-center justify-center gap-1.5">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import PricingModal from "./PricingModal";
+import { openZohoDeskChat } from "@/lib/zohoDesk";
 
 interface PricingTier {
   name: string;
@@ -402,7 +403,7 @@ export default function PricingSection() {
                   Get Started
                 </button>
                 <button
-                  onClick={() => window.dispatchEvent(new Event("openHelpChat"))}
+                  onClick={() => openZohoDeskChat()}
                   className={`flex-1 text-center py-3 rounded-full text-sm font-bold border-2 transition-colors ${
                     isHighlighted
                       ? "border-white bg-white text-[#08130e]"
