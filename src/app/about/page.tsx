@@ -16,15 +16,15 @@ export default function AboutPage() {
     <>
       {/* ── Hero Section ── */}
       <section
-        className="relative min-h-[800px] flex items-end justify-center pb-24"
+        className="relative min-h-[600px] sm:min-h-[800px] flex items-end justify-center pb-16 sm:pb-24"
         style={{
           background:
             "linear-gradient(180deg, #061a10 0%, #0A2515 12%, #0F3320 28%, #145A32 42%, #1B7A42 58%, #22A350 74%, #2CC968 88%, #34E077 100%)",
         }}
       >
-        <div className="max-w-[920px] mx-auto px-6 text-center">
+        <div className="max-w-[920px] mx-auto px-5 sm:px-6 text-center">
           <h1
-            className="text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-white leading-[1.38]"
+            className="text-xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-white leading-[1.4]"
             style={{ fontFamily: "var(--font-poppins), sans-serif", fontWeight: 700 }}
           >
             Shopify Managers is a top-performing Shopify agency that offers robust and conversion-driven store for all business owners. We&rsquo;re founders just like you with the aim of helping businesses ignite growth and achieve limitless scale.

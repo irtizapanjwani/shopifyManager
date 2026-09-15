@@ -45,7 +45,7 @@ export default function Footer() {
       id="contact"
       className="bg-[#010810] text-white pt-16 pb-8"
     >
-      <div className="w-full px-[72px]">
+      <div className="w-full px-5 sm:px-10 lg:px-[72px]">
 
         {/* ── Footer Columns ─────────────────────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12">

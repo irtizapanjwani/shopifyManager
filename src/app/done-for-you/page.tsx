@@ -15,17 +15,17 @@ export default function DoneForYouPage() {
     <>
       {/* ── Hero Section ── */}
       <section
-        className="relative min-h-[800px] flex items-center pt-48 pb-20"
+        className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] flex items-center pt-32 sm:pt-48 pb-16 sm:pb-20"
         style={{
           background:
             "linear-gradient(180deg, #061a10 0%, #0A2515 12%, #0F3320 28%, #145A32 42%, #1B7A42 58%, #22A350 74%, #2CC968 88%, #34E077 100%)",
         }}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:pl-4 md:pr-6 w-full flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:pl-4 md:pr-6 w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
           {/* Left Content */}
-          <div className="flex-1 max-w-[700px] pt-22">
+          <div className="flex-1 max-w-[700px] pt-10 sm:pt-22">
             <h1
-              className="text-3xl md:text-4xl lg:text-[2.698rem] font-bold text-white leading-[1.3]"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.698rem] font-bold text-white leading-[1.3]"
               style={{ fontFamily: "var(--font-poppins), sans-serif", fontWeight: 700 }}
             >
               From Product Hunting to Delivery,<br />We&apos;ve Got You Covered.

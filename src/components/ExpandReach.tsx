@@ -14,11 +14,11 @@ const features = [
 export default function ExpandReach() {
   return (
     <section className="bg-white pt-16 pb-8 sm:pt-24 sm:pb-8 lg:pt-32 lg:pb-8">
-      <div className="w-full px-[72px]">
+      <div className="w-full px-5 sm:px-10 lg:px-[72px]">
         <div className="grid lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center">
 
           {/* ── Left column ───────────────────────────── */}
-          <div className="bg-white rounded-3xl p-8 sm:p-10 lg:p-14 space-y-8 border border-[#e5e5e5] self-center -mt-[25px]">
+          <div className="bg-white rounded-3xl p-5 sm:p-8 lg:p-14 space-y-8 border border-[#e5e5e5] self-center -mt-0 lg:-mt-[25px]">
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight leading-[1.2]">
               <span className="text-[#1a1a1a]">Expand Your Reach with</span>
               <br />
@@ -61,7 +61,7 @@ export default function ExpandReach() {
           </div>
 
           {/* ── Right column — image with decorations ── */}
-          <div className="relative flex justify-center lg:justify-end self-start -mt-[130px]">
+          <div className="relative flex justify-center lg:justify-end self-start mt-0 lg:-mt-[130px]">
             {/* Main image */}
             <div className="relative w-full max-w-[741px] aspect-[741/779]">
               <Image

@@ -19,16 +19,16 @@ const essentialFeatures = [
 export default function EssentialFeatures() {
   return (
     <section className="bg-white py-20 sm:py-24" aria-labelledby="essential-features-heading">
-      <div className="max-w-7xl mx-auto px-10 sm:px-16 lg:px-24">
+      <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-24">
         <div className="text-center mb-14">
           <h2
             id="essential-features-heading"
-            className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight whitespace-nowrap"
+            className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
           >
             <span className="font-semibold">Essential Features Included in</span>{" "}
             <span className="text-[#58DDB0]">E-Commerce Shopify Plan</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-500 whitespace-nowrap">
+          <p className="mt-3 text-sm sm:text-base text-slate-500">
             Are you looking to scale up your Shopify business? We offer all-inclusive Shopify features that deliver long-term value for your business.
           </p>
         </div>

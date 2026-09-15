@@ -43,7 +43,7 @@ export default function FAQ() {
       className="py-16 sm:py-20 bg-white"
       aria-labelledby="faq-heading"
     >
-      <div className="w-full px-[72px]">
+      <div className="w-full px-5 sm:px-10 lg:px-[72px]">
         <div className="text-center mb-10">
           <h2
             id="faq-heading"

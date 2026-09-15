@@ -32,7 +32,7 @@ export default function CoreSolutions() {
       className="pt-20 pb-12 bg-[#292f40]"
       aria-labelledby="solutions-heading"
     >
-      <div className="w-full px-[72px]">
+      <div className="w-full px-5 sm:px-10 lg:px-[72px]">
         <div className="w-full text-center mb-8">
           <h2
             id="solutions-heading"

@@ -49,7 +49,7 @@ export default function ThreePillars() {
       className="pt-8 pb-20 bg-white"
       aria-labelledby="pillars-heading"
     >
-      <div className="w-full px-[72px]">
+      <div className="w-full px-5 sm:px-10 lg:px-[72px]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Accordion */}
           <div className="space-y-0">

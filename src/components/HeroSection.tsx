@@ -43,8 +43,8 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-[72px] pt-24">
-        <div className="flex justify-end">
+      <div className="relative z-10 w-full px-5 sm:px-10 lg:px-[72px] pt-24">
+        <div className="flex justify-center lg:justify-end">
           <div className="max-w-[600px] space-y-6">
             <h1
               id="hero-heading"

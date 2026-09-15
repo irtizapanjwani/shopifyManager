@@ -289,7 +289,7 @@ export default function PricingSection() {
         className="py-20 bg-[#f5f6f7]"
         aria-labelledby="pricing-heading"
       >
-      <div className="w-full px-[72px]">
+      <div className="w-full px-5 sm:px-10 lg:px-[72px]">
         <div className="max-w-3xl mx-auto text-center mb-10">
           <h2
             id="pricing-heading"

@@ -516,16 +516,16 @@ export default function DropshippingPage() {
     <>
       {/* Hero Section */}
       <section
-        className="relative min-h-[800px] flex items-center pt-28"
+        className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] flex items-center pt-24 sm:pt-28"
         style={{
           background:
             "linear-gradient(180deg, #000000 0%, #050F04 15%, #10250B 35%, #1F3A12 55%, #476F28 75%, #74A63F 100%)",
         }}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-10 w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
           <div className="flex-1 max-w-[650px]">
             <h1
-              className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.15]"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.15]"
               style={{ fontFamily: "var(--font-poppins), sans-serif", fontWeight: 700 }}
             >
               Start Selling Online with<br />Trusted Dropshipping<br />Services

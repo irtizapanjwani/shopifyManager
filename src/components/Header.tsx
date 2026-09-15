@@ -41,7 +41,7 @@ export default function Header() {
         scrolled ? "bg-[#195f35]" : "bg-transparent"
       }`}
     >
-      <div className="w-full px-[72px] h-24 pt-3 flex items-center justify-between">
+      <div className="w-full px-5 sm:px-10 lg:px-[72px] h-24 pt-3 flex items-center justify-between">
         <Link href="/" aria-label="Shopify Launch Pad Home" className="flex items-center group focus:outline-none flex-shrink-0">
           <Image src="/shopify-logo/shopifylogowhite.webp" alt="Shopify Launch Pad Logo" width={153} height={63} className="h-[60px] w-auto" priority />
         </Link>

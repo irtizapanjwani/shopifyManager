@@ -156,7 +156,7 @@ export default function ContactPage() {
 
       {/* ── Get In Touch Form ── */}
       <section className="bg-white py-20">
-        <div className="w-full px-[72px]">
+        <div className="w-full px-5 sm:px-10 lg:px-[72px]">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-[#0d3d23] mb-4">
             Get In <span className="text-[#59DFAB]">Touch</span>
           </h2>

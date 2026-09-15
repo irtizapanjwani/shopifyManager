@@ -14,17 +14,17 @@ export default function PricingPage() {
     <>
       {/* ── Hero Section ── */}
       <section
-        className="relative min-h-[800px] flex items-center"
+        className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] flex items-center"
         style={{
           background:
             "linear-gradient(180deg, #061a10 0%, #0A2515 12%, #0F3320 28%, #145A32 42%, #1B7A42 58%, #22A350 74%, #2CC968 88%, #34E077 100%)",
         }}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-[72px] w-full flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-[72px] w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10 pt-28 sm:pt-0">
           {/* Left Content */}
           <div className="flex-1 max-w-[600px]">
             <h1
-              className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-white leading-[1.2]"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-white leading-[1.2]"
               style={{ fontFamily: "var(--font-poppins), sans-serif", fontWeight: 700 }}
             >
               Discover Our Budget-Friendly Web Pricing Options

@@ -35,12 +35,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${inter.variable} ${poppins.variable} scroll-smooth`}
+      className={`${manrope.variable} ${inter.variable} ${poppins.variable} scroll-smooth overflow-x-hidden`}
     >
-      <body className={`${manrope.className} min-h-full flex flex-col font-sans antialiased bg-[#fbfdfc]`}>
+      <body className={`${manrope.className} min-h-full flex flex-col font-sans antialiased bg-[#fbfdfc] overflow-x-hidden`}>
         <ToastProvider>
           {isDropshipping ? <DropshippingHeader /> : <Header />}
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 overflow-x-hidden">{children}</main>
           <Footer />
         </ToastProvider>
         <ZohoSalesIQ />
