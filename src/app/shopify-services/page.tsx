@@ -62,32 +62,32 @@ export default function ShopifyServicesPage() {
       {/* ── Services Tabs ── */}
       <section className="bg-white pt-16 pb-8">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="flex flex-nowrap items-center justify-center gap-8 md:gap-14 mb-24">
-            <div className="flex items-center gap-3">
-              <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex flex-nowrap items-center justify-center gap-4 sm:gap-5 md:gap-8 lg:gap-14 mb-24">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 9l-2 2m0 0l2 2m-2-2h8" />
               </svg>
-              <span className="text-xl font-bold text-gray-800">Development.</span>
+              <span className="text-xs sm:text-sm md:text-base font-bold text-gray-800">Development.</span>
             </div>
-            <div className="flex items-center gap-3">
-              <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13h16M7 17h4" />
               </svg>
-              <span className="text-xl font-bold text-gray-800">Shopify Design.</span>
+              <span className="text-xs sm:text-sm md:text-base font-bold text-gray-800">Shopify Design.</span>
             </div>
-            <div className="flex items-center gap-3">
-              <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               </svg>
-              <span className="text-xl font-bold text-gray-800">Shopify CRO.</span>
+              <span className="text-xs sm:text-sm md:text-base font-bold text-gray-800">Shopify CRO.</span>
             </div>
-            <div className="flex items-center gap-3">
-              <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a2 2 0 11-4 0" />
               </svg>
-              <span className="text-xl font-bold text-gray-800">Shopify Support.</span>
+              <span className="text-xs sm:text-sm md:text-base font-bold text-gray-800">Shopify Support.</span>
             </div>
           </div>
 
@@ -101,60 +101,60 @@ export default function ShopifyServicesPage() {
             </p>
             <button
               onClick={() => setModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-gray-800 text-sm font-semibold hover:bg-gray-100 transition-all duration-300 mb-24"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-gray-800 text-sm font-semibold hover:bg-gray-100 transition-all duration-300 mb-16"
             >
               Get a Free Consultation
             </button>
           </div>
 
-          {/* Service Cards - Overlapping the green banner */}
-          <div className="relative z-10 -mt-24 mb-8">
+          {/* Service Cards */}
+          <div className="relative z-10 mt-8 mb-8">
             <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                 <div className="flex flex-col items-center">
-                  <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-lg mb-5">
+                  <div className="w-56 h-56 sm:w-60 sm:h-60 bg-white rounded-full flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.12)] mb-5">
                     <Image
                       src="/shopify-custom-services/5.png"
                       alt="Shopify Design"
                       width={140}
                       height={140}
-                      className="w-32 h-32 object-contain"
+                      className="w-36 h-36 sm:w-40 sm:h-40 object-contain"
                     />
                   </div>
                   <span className="text-base font-bold text-gray-800">Shopify Design</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-lg mb-5">
+                  <div className="w-56 h-56 sm:w-60 sm:h-60 bg-white rounded-full flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.12)] mb-5">
                     <Image
                       src="/shopify-custom-services/6.png"
                       alt="Shopify Development"
                       width={140}
                       height={140}
-                      className="w-32 h-32 object-contain"
+                      className="w-36 h-36 sm:w-40 sm:h-40 object-contain"
                     />
                   </div>
                   <span className="text-base font-bold text-gray-800">Shopify Development</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-lg mb-5">
+                  <div className="w-56 h-56 sm:w-60 sm:h-60 bg-white rounded-full flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.12)] mb-5">
                     <Image
                       src="/shopify-custom-services/7.png"
                       alt="Shopify Migration"
                       width={140}
                       height={140}
-                      className="w-32 h-32 object-contain"
+                      className="w-36 h-36 sm:w-40 sm:h-40 object-contain"
                     />
                   </div>
                   <span className="text-base font-bold text-gray-800">Shopify Migration</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-lg mb-5">
+                  <div className="w-56 h-56 sm:w-60 sm:h-60 bg-white rounded-full flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.12)] mb-5">
                     <Image
                       src="/shopify-custom-services/8.png"
                       alt="Support and Maintenance"
                       width={140}
                       height={140}
-                      className="w-32 h-32 object-contain"
+                      className="w-36 h-36 sm:w-40 sm:h-40 object-contain"
                     />
                   </div>
                   <span className="text-base font-bold text-gray-800">Support and<br />Maintenance</span>
@@ -177,11 +177,11 @@ export default function ShopifyServicesPage() {
 
           {/* How We Build Section */}
           <div className="pt-8 pb-16">
-            <div className="max-w-[1400px] mx-auto pl-2 pr-6 md:pl-4 md:pr-12 flex flex-col md:flex-row items-center gap-12">
+            <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
               {/* Left Content */}
               <div className="flex-1">
                 <p className="text-gray-500 text-sm mb-4">How We Build Your E-Commerce Shopify Store</p>
-                <h2 className="text-2xl md:text-3xl font-normal text-gray-900 leading-tight mb-6 whitespace-nowrap" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
+                <h2 className="text-2xl md:text-3xl font-normal text-gray-900 leading-tight mb-6" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
                   Research, Design, And Development
                 </h2>
                 <p className="text-gray-600 text-sm leading-relaxed mb-8">

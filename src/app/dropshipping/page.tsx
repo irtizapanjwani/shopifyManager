@@ -662,7 +662,7 @@ export default function DropshippingPage() {
       {/* Heading Section */}
       <section className="bg-white py-20">
         <div className="max-w-[1100px] mx-auto px-6 text-center">
-          <h2 className="text-xl md:text-2xl lg:text-[1.75rem] font-normal text-gray-700 leading-tight whitespace-nowrap" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+          <h2 className="text-xl md:text-2xl lg:text-[1.75rem] font-semibold text-gray-700 leading-tight" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
             Get Expert Dropshipping Solutions That Help Your Business<br />Thrive
           </h2>
         </div>

@@ -16,74 +16,48 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[855px] overflow-hidden bg-gradient-to-b from-[#071B0F] via-[#329F58] to-[#3BC26C]">
+      <section
+        className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[855px] flex items-center overflow-hidden bg-gradient-to-b from-[#071B0F] via-[#329F58] to-[#3BC26C]"
+      >
+        <div className="mx-auto w-full max-w-[1760px] px-5 sm:px-8 md:px-[82px] pt-28 sm:pt-0">
+          <div className="max-w-[700px]">
 
-        {/* Hero Content Container */}
-        <div className="mx-auto w-full max-w-[1760px] px-[82px]">
-          <div className="relative min-h-[855px]">
-
-            {/* Left Content */}
-            <div className="absolute left-0 top-[300px] z-10 w-[700px]">
-
-              {/* Shopify / Shopify Plus */}
-              <div className="mb-[38px] flex items-center gap-[14px]">
-                <span className="text-[21px] font-bold text-white">
-                  Shopify
-                </span>
-
-                <span className="text-[22px] text-white">
-                  |
-                </span>
-
-                <span className="text-[21px] font-bold italic text-white">
-                  shopifyplus
-                </span>
-              </div>
-
-              {/* Heading */}
-              <h1 className="max-w-[900px] text-[38px] font-extrabold leading-[1.25] tracking-[-0.5px] text-white">
-                We&apos;re Your Shopify Partner: Find
-                <br />
-                Out the
-                <br />
-                Best Solution for Your Shopify Store.
-              </h1>
-
-              {/* Paragraph */}
-              <p className="mt-[28px] max-w-[900px] text-[16px] font-normal leading-[1.75] text-white">
-                Struggling with building your online store? Shopify Managers
-                specializes in delivering the all-inclusive Shopify solutions
-                that offers scalability, performance and flexibility needed to
-                manage stores in different languages, currencies and locations.
-              </p>
-
-              {/* Buttons */}
-              <div className="mt-[27px] flex items-center gap-[14px]">
-                <Link href="/shopify-services" className="h-[46px] w-[160px] rounded-full border border-white text-[14px] font-semibold text-white transition hover:bg-white hover:text-[#145126] flex items-center justify-center">
-                  Shopify Service
-                </Link>
-
-                <Link href="/ecommerce-marketing" className="h-[46px] w-[220px] rounded-full border border-white text-[14px] font-semibold text-white transition hover:bg-white hover:text-[#145126] flex items-center justify-center">
-                  E-Commerce Marketing
-                </Link>
-
-                <Link href="/done-for-you" className="h-[46px] w-[150px] rounded-full border border-white text-[14px] font-semibold text-white transition hover:bg-white hover:text-[#145126] flex items-center justify-center">
-                  Done For You
-                </Link>
-              </div>
+            {/* Shopify / Shopify Plus */}
+            <div className="mb-6 flex items-center gap-3">
+              <span className="text-lg sm:text-xl font-bold text-white">
+                Shopify
+              </span>
+              <span className="text-lg sm:text-xl text-white">|</span>
+              <span className="text-lg sm:text-xl font-bold italic text-white">
+                shopifyplus
+              </span>
             </div>
 
-            {/* Right Image */}
-            <div className="absolute right-[40px] top-[100px] z-10 flex justify-center pt-20">
-              <Image
-                src="/shopify-donefor/1.png"
-                alt="Shopify Services illustration"
-                width={2500}
-                height={2500}
-                className="w-full max-w-[900px] max-h-[550px] h-auto"
-              />
-            </div>
+            {/* Heading */}
+            <h1 className="text-2xl sm:text-3xl md:text-[38px] font-extrabold leading-[1.25] tracking-[-0.5px] text-white">
+              We&apos;re Your Shopify Partner: Find Out the Best Solution for Your Shopify Store.
+            </h1>
 
+            {/* Paragraph */}
+            <p className="mt-6 sm:mt-7 max-w-[600px] text-sm sm:text-base font-normal leading-[1.75] text-white">
+              Struggling with building your online store? Shopify Managers
+              specializes in delivering the all-inclusive Shopify solutions
+              that offers scalability, performance and flexibility needed to
+              manage stores in different languages, currencies and locations.
+            </p>
+
+            {/* Buttons */}
+            <div className="mt-7 sm:mt-8 flex flex-col items-center sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-3">
+              <Link href="/shopify-services" className="w-full sm:w-auto h-10 sm:h-[46px] rounded-full border border-white text-xs sm:text-sm font-semibold text-white transition hover:bg-white hover:text-[#145126] flex items-center justify-center px-5 sm:px-6">
+                Shopify Service
+              </Link>
+              <Link href="/ecommerce-marketing" className="w-full sm:w-auto h-10 sm:h-[46px] rounded-full border border-white text-xs sm:text-sm font-semibold text-white transition hover:bg-white hover:text-[#145126] flex items-center justify-center px-5 sm:px-6">
+                E-Commerce Marketing
+              </Link>
+              <Link href="/done-for-you" className="w-full sm:w-auto h-10 sm:h-[46px] rounded-full border border-white text-xs sm:text-sm font-semibold text-white transition hover:bg-white hover:text-[#145126] flex items-center justify-center px-5 sm:px-6">
+                Done For You
+              </Link>
+            </div>
           </div>
         </div>
       </section>

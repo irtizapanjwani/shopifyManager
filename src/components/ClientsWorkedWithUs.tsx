@@ -21,11 +21,11 @@ export default function ClientsWorkedWithUs({ showTitle = true }: ClientsWorkedW
           We have a track record of building Shopify stores for various well-known businesses.
         </p>
 
-        {/* 6 Client Logos — evenly spaced, soft light-gray */}
-        <div className="mt-10 sm:mt-12 max-w-5xl mx-auto flex items-center justify-center gap-6 sm:gap-10 md:gap-14">
+        {/* 6 Client Logos — 2 rows of 3, soft light-gray */}
+        <div className="mt-10 sm:mt-12 max-w-3xl mx-auto grid grid-cols-3 gap-y-8 gap-x-6 sm:gap-y-10 sm:gap-x-10 place-items-center">
 
           {/* 1. Billionaire Boys Club */}
-          <div className="flex items-center justify-center w-[58px] sm:w-[66px] md:w-[72px] flex-shrink-0">
+          <div className="flex items-center justify-center w-[58px] sm:w-[66px] md:w-[72px]">
             <Image
               src="/shopify-clients/client-1.png"
               alt="Billionaire Boys Club"
@@ -36,7 +36,7 @@ export default function ClientsWorkedWithUs({ showTitle = true }: ClientsWorkedW
           </div>
 
           {/* 2. Candy Kittens */}
-          <div className="flex items-center justify-center w-[100px] sm:w-[110px] md:w-[118px] flex-shrink-0">
+          <div className="flex items-center justify-center w-[100px] sm:w-[110px] md:w-[118px]">
             <Image
               src="/shopify-clients/client-2.png"
               alt="Candy Kittens"
@@ -47,7 +47,7 @@ export default function ClientsWorkedWithUs({ showTitle = true }: ClientsWorkedW
           </div>
 
           {/* 3. Doisy & Dam */}
-          <div className="flex items-center justify-center w-[68px] sm:w-[76px] md:w-[82px] flex-shrink-0">
+          <div className="flex items-center justify-center w-[68px] sm:w-[76px] md:w-[82px]">
             <Image
               src="/shopify-clients/client-3.png"
               alt="Doisy & Dam"
@@ -58,7 +58,7 @@ export default function ClientsWorkedWithUs({ showTitle = true }: ClientsWorkedW
           </div>
 
           {/* 4. Lifeboats */}
-          <div className="flex items-center justify-center w-[65px] sm:w-[72px] md:w-[78px] flex-shrink-0">
+          <div className="flex items-center justify-center w-[65px] sm:w-[72px] md:w-[78px]">
             <Image
               src="/shopify-clients/client-4.png"
               alt="RNLI Lifeboats"
@@ -69,7 +69,7 @@ export default function ClientsWorkedWithUs({ showTitle = true }: ClientsWorkedW
           </div>
 
           {/* 5. Rude Health */}
-          <div className="flex items-center justify-center w-[48px] sm:w-[54px] md:w-[58px] flex-shrink-0">
+          <div className="flex items-center justify-center w-[48px] sm:w-[54px] md:w-[58px]">
             <Image
               src="/shopify-clients/client-5.png"
               alt="Rude Health"
@@ -80,7 +80,7 @@ export default function ClientsWorkedWithUs({ showTitle = true }: ClientsWorkedW
           </div>
 
           {/* 6. Samsung */}
-          <div className="flex items-center justify-center w-[95px] sm:w-[105px] md:w-[112px] flex-shrink-0">
+          <div className="flex items-center justify-center w-[95px] sm:w-[105px] md:w-[112px]">
             <Image
               src="/shopify-clients/client-6.png"
               alt="Samsung"

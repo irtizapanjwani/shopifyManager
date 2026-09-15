@@ -24,6 +24,7 @@ const serviceLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -105,9 +106,35 @@ export default function Header() {
 
       {mobileOpen && (
         <div className="lg:hidden bg-[#195f35] border-t border-white/15 px-4 pb-6 pt-4 space-y-1">
-          <Link href="/shopify-services" className="block px-4 py-3 rounded-lg text-sm font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors" onClick={() => setMobileOpen(false)}>
-            Services
-          </Link>
+          <div>
+            <button
+              className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors"
+              onClick={() => setMobileServicesOpen((o) => !o)}
+            >
+              Services
+              <svg className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+              </svg>
+            </button>
+            {mobileServicesOpen && (
+              <div className="pl-4 space-y-1">
+                {serviceLinks.map((svc) => (
+                  <Link
+                    key={svc.label}
+                    href={svc.href}
+                    className={`block px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors ${
+                      pathname === svc.href
+                        ? "text-[#59DFAB] bg-[#162a20]"
+                        : "text-white hover:bg-[#162a20] hover:text-[#9bc43f]"
+                    }`}
+                    onClick={() => { setMobileOpen(false); setMobileServicesOpen(false); }}
+                  >
+                    {svc.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           {navLinks.map((link) => (
             <Link
               key={link.label}
