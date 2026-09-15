@@ -23,9 +23,9 @@ export default function Home() {
       <CoreSolutions />
       <PortfolioShowcase />
       <WhyUs />
-      <EssentialFeatures />
       <AwardsStrip />
       <PricingSection />
+      <EssentialFeatures />
       <Testimonials />
       <FAQ />
     </>
