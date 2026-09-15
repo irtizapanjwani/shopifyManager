@@ -7,6 +7,7 @@ import EssentialFeatures from "@/components/EssentialFeatures";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import ConsultModal from "@/components/ConsultModal";
+import ClientsWorkedWithUs from "@/components/ClientsWorkedWithUs";
 
 export default function AboutPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -38,26 +39,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Clients That Worked with Us ── */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2
-            className="text-[46px] font-normal text-[#0d3d23] mb-12"
-            style={{ fontFamily: "var(--font-poppins), sans-serif" }}
-          >
-            Clients That <span className="text-[#59DFAB]">Worked with Us</span>
-          </h2>
-
-          <div className="flex justify-center">
-            <Image
-              src="/shopify-services/clients-strip.png"
-              alt="Client logos"
-              width={1400}
-              height={80}
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </section>
+      <ClientsWorkedWithUs />
 
       {/* ── How Shopify Managers Came into Existence ── */}
       <section className="bg-white pb-20">

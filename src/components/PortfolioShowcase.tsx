@@ -3,21 +3,17 @@
 import Image from "next/image";
 
 const row1 = [
-  { src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop", alt: "Fashion store" },
-  { src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop", alt: "E-commerce checkout" },
-  { src: "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=600&h=400&fit=crop", alt: "Online shopping" },
-  { src: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=400&fit=crop", alt: "Product display" },
-  { src: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop", alt: "Accessories store" },
-  { src: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=400&fit=crop", alt: "Sneaker store" },
+  { src: "/Shopify%20Launchpad%20Images/1.jpg", alt: "Shopify store 1" },
+  { src: "/Shopify%20Launchpad%20Images/2.jpg", alt: "Shopify store 2" },
+  { src: "/Shopify%20Launchpad%20Images/3.jpg", alt: "Shopify store 3" },
+  { src: "/Shopify%20Launchpad%20Images/4.jpg", alt: "Shopify store 4" },
 ];
 
 const row2 = [
-  { src: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600&h=400&fit=crop", alt: "Footwear collection" },
-  { src: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=600&h=400&fit=crop", alt: "Sneaker collection" },
-  { src: "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=600&h=400&fit=crop", alt: "Fashion products" },
-  { src: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=400&fit=crop", alt: "Clothing store" },
-  { src: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=400&fit=crop", alt: "Fashion shopping" },
-  { src: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&h=400&fit=crop", alt: "Retail display" },
+  { src: "/Shopify%20Launchpad%20Images/5.jpg", alt: "Shopify store 5" },
+  { src: "/Shopify%20Launchpad%20Images/6.jpg", alt: "Shopify store 6" },
+  { src: "/Shopify%20Launchpad%20Images/7.jpg", alt: "Shopify store 7" },
+  { src: "/Shopify%20Launchpad%20Images/8.jpg", alt: "Shopify store 8" },
 ];
 
 export default function PortfolioShowcase() {
@@ -41,19 +37,19 @@ export default function PortfolioShowcase() {
       </div>
 
       {/* Row 1 — scrolls left to right */}
-      <div className="relative mb-6">
-        <div className="flex gap-5 w-max animate-marquee-right">
+      <div className="relative mb-4 sm:mb-6">
+        <div className="flex gap-4 sm:gap-6 w-max animate-marquee-right">
           {[...row1, ...row1].map((img, i) => (
             <div
               key={`r1-${i}`}
-              className="flex-shrink-0 w-[320px] sm:w-[380px] lg:w-[420px] h-[220px] sm:h-[260px] lg:h-[280px] rounded-xl overflow-hidden relative"
+              className="flex-shrink-0 w-[280px] sm:w-[400px] md:w-[480px] lg:w-[530px] aspect-[529/420] overflow-hidden relative rounded-none shadow-sm"
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
                 className="object-cover"
-                sizes="420px"
+                sizes="(max-width: 640px) 280px, (max-width: 1024px) 480px, 530px"
               />
             </div>
           ))}
@@ -62,18 +58,18 @@ export default function PortfolioShowcase() {
 
       {/* Row 2 — scrolls right to left */}
       <div className="relative">
-        <div className="flex gap-5 w-max animate-marquee-left">
+        <div className="flex gap-4 sm:gap-6 w-max animate-marquee-left">
           {[...row2, ...row2].map((img, i) => (
             <div
               key={`r2-${i}`}
-              className="flex-shrink-0 w-[320px] sm:w-[380px] lg:w-[420px] h-[220px] sm:h-[260px] lg:h-[280px] rounded-xl overflow-hidden relative"
+              className="flex-shrink-0 w-[280px] sm:w-[400px] md:w-[480px] lg:w-[530px] aspect-[529/420] overflow-hidden relative rounded-none shadow-sm"
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
                 className="object-cover"
-                sizes="420px"
+                sizes="(max-width: 640px) 280px, (max-width: 1024px) 480px, 530px"
               />
             </div>
           ))}

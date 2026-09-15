@@ -145,16 +145,87 @@ details > summary {
   animation: toastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* ─── Zoho SalesIQ Chat Window Size ──────────────────────── */
-.zsiq_floatmain,
-.zsiq_floatmain.siq_bR,
-.zsiq-newtheme.siqembed.zls-sptwndw,
-div[id*="siq"][style*="height"] {
-  max-height: 350px !important;
-  height: 350px !important;
+/* ─── Zoho SalesIQ: Make Chat Popup Smaller ───────────────── */
+.zls-sptwndw,
+.siqembed,
+.zsiq-newtheme.siqembed,
+iframe[id*="siqiframe"],
+iframe[id*="siqcht"] {
+  transform: scale(0.82) !important;
+  transform-origin: bottom right !important;
 }
 
-.zsiq_floatmain iframe,
-.zsiq-newtheme iframe {
-  max-height: 350px !important;
+/* ─── Pricing Card Feature List Scrollbars (Clean, No Arrows) ─────── */
+.pricing-scrollbar-light::-webkit-scrollbar,
+.pricing-scrollbar-dark::-webkit-scrollbar {
+  width: 4px !important;
+  height: 4px !important;
+  background: transparent !important;
 }
+
+.pricing-scrollbar-light::-webkit-scrollbar-button,
+.pricing-scrollbar-dark::-webkit-scrollbar-button,
+.pricing-scrollbar-light::-webkit-scrollbar-button:single-button,
+.pricing-scrollbar-dark::-webkit-scrollbar-button:single-button,
+.pricing-scrollbar-light::-webkit-scrollbar-button:vertical:decrement,
+.pricing-scrollbar-light::-webkit-scrollbar-button:vertical:increment,
+.pricing-scrollbar-dark::-webkit-scrollbar-button:vertical:decrement,
+.pricing-scrollbar-dark::-webkit-scrollbar-button:vertical:increment {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+.pricing-scrollbar-light::-webkit-scrollbar-corner,
+.pricing-scrollbar-dark::-webkit-scrollbar-corner {
+  display: none !important;
+  background: transparent !important;
+}
+
+.pricing-scrollbar-light::-webkit-scrollbar-track,
+.pricing-scrollbar-light::-webkit-scrollbar-track-piece {
+  background: #e2e8f0 !important;
+  border-radius: 9999px !important;
+  border: none !important;
+}
+
+.pricing-scrollbar-light::-webkit-scrollbar-thumb {
+  background: #58DDB0 !important;
+  border-radius: 9999px !important;
+  border: none !important;
+}
+
+.pricing-scrollbar-light::-webkit-scrollbar-thumb:hover {
+  background: #48cda1 !important;
+}
+
+.pricing-scrollbar-dark::-webkit-scrollbar-track,
+.pricing-scrollbar-dark::-webkit-scrollbar-track-piece {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-radius: 9999px !important;
+  border: none !important;
+}
+
+.pricing-scrollbar-dark::-webkit-scrollbar-thumb {
+  background: #ffffff !important;
+  border-radius: 9999px !important;
+  border: none !important;
+}
+
+.pricing-scrollbar-dark::-webkit-scrollbar-thumb:hover {
+  background: #f1f5f9 !important;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .pricing-scrollbar-light {
+    scrollbar-width: thin;
+    scrollbar-color: #58DDB0 #e2e8f0;
+  }
+  .pricing-scrollbar-dark {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff rgba(255, 255, 255, 0.25);
+  }
+}
+
+

@@ -47,6 +47,7 @@ const ecommercePlans: PricingTier[] = [
       "Dedicated Designer & Developer",
       "Unlimited Revisions",
       "100% Satisfaction Guarantee",
+      "100% Unique Design Guarantee",
     ],
   },
   {
@@ -63,6 +64,8 @@ const ecommercePlans: PricingTier[] = [
       "Easy Product Search",
       "Dedicated Designer & Developer",
       "Unlimited Revisions",
+      "100% Satisfaction Guarantee",
+      "100% Unique Design Guarantee",
     ],
   },
   {
@@ -78,6 +81,11 @@ const ecommercePlans: PricingTier[] = [
       "Easy Product Search",
       "Product Reviews",
       "Blog Page",
+      "5 Promotional Banners",
+      "Team Of Expert Designers Developers",
+      "Unlimited Revisions",
+      "100% Satisfaction Guarantee",
+      "100% Unique Design Guarantee",
     ],
   },
   {
@@ -93,6 +101,12 @@ const ecommercePlans: PricingTier[] = [
       "Custom Shopping Cart Integration",
       "Multiple Payment Module Integration",
       "Navegational and Search Optimisation",
+      "Blog Page",
+      "Multiple Currency Support",
+      "Mobile Responsive",
+      "Dedicated Team of Expert Designers & Developers",
+      "Dedicated Project Manager",
+      "100% Satisfaction Guarantee",
     ],
   },
   {
@@ -107,6 +121,18 @@ const ecommercePlans: PricingTier[] = [
       "Unlimited Banner Designs",
       "Interactive Sliding Banners",
       "Special Hover Effects",
+      "Client/User Dashboard Area",
+      "Customized Contact Us Form",
+      "Multiple Filtration Option (Search by Age, Experience, Talent, Industry etc.)",
+      "Custom Coding and Development",
+      "Online Appointment/Scheduling integration (Optional)",
+      "Online Payment Integration",
+      "Signup Area (For Newsletters, Offers, etc.)",
+      "Search Engine Submission",
+      "Mobile Responsive",
+      "Master Admin Panel",
+      "Complete Deployment",
+      "Dedicated Team of Designers and Developers",
     ],
   },
 ];
@@ -317,20 +343,22 @@ export default function PricingSection() {
               {plan.badge && <BadgeRibbon type={plan.badge} />}
 
               <div>
-                <h3
-                  className={`text-2xl font-black ${
-                    isHighlighted ? "text-white" : "text-slate-900"
-                  }`}
-                >
-                  {plan.name}
-                </h3>
-                <p
-                  className={`text-sm mt-1 ${
-                    isHighlighted ? "text-white/90" : "text-slate-500"
-                  }`}
-                >
-                  {plan.description}
-                </p>
+                <div className={plan.badge ? "pr-16 sm:pr-20" : ""}>
+                  <h3
+                    className={`text-2xl font-black ${
+                      isHighlighted ? "text-white" : "text-slate-900"
+                    }`}
+                  >
+                    {plan.name}
+                  </h3>
+                  <p
+                    className={`text-sm mt-1 ${
+                      isHighlighted ? "text-white/90" : "text-slate-500"
+                    }`}
+                  >
+                    {plan.description}
+                  </p>
+                </div>
 
                 <div
                   className={`mt-5 mb-6 inline-flex items-baseline gap-2 rounded-r-full px-5 py-2.5 ${
@@ -363,10 +391,10 @@ export default function PricingSection() {
                 </div>
 
                 <ul
-                  className={`space-y-3 text-sm ${
-                    activeTab === "E-Commerce"
-                      ? "max-h-[300px] overflow-y-auto pr-2"
-                      : ""
+                  className={`space-y-3 text-sm h-[200px] overflow-y-auto pr-3 ${
+                    isHighlighted
+                      ? "pricing-scrollbar-dark"
+                      : "pricing-scrollbar-light"
                   }`}
                 >
                   {plan.features.map((f) => (

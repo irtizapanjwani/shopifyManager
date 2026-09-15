@@ -4,6 +4,7 @@ import Link from "next/link";
 import EssentialFeatures from "@/components/EssentialFeatures";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
+import ClientsWorkedWithUs from "@/components/ClientsWorkedWithUs";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -88,24 +89,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Clients That Worked with Us ── */}
-      <section className="bg-white pt-20 pb-0 -mb-4">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-[36px] md:text-[36px] font-normal text-[#0d3d23] mb-12" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
-            Clients That <span className="text-[#59DFAB] font-bold">Worked with Us</span>
-          </h2>
-
-          {/* Logo strip */}
-          <div className="flex justify-center bg-white">
-            <Image
-              src="/shopify-services/clients-strip.png"
-              alt="Client logos"
-              width={1400}
-              height={80}
-              className="w-full h-auto bg-white"
-            />
-          </div>
-        </div>
-      </section>
+      <ClientsWorkedWithUs />
 
       {/* ── Shopify Store Development ── */}
       <section className="bg-white px-6 pt-20 pb-8 sm:pt-28 sm:pb-8">

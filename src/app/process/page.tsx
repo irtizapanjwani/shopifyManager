@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTABanner from "@/components/CTABanner";
 import ConsultModal from "@/components/ConsultModal";
+import ClientsWorkedWithUs from "@/components/ClientsWorkedWithUs";
 
 const processSteps = [
   {
@@ -84,26 +85,7 @@ export default function ProcessPage() {
       </section>
 
       {/* ── Clients That Worked with Us ── */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2
-            className="text-[46px] font-normal text-[#0d3d23] mb-12"
-            style={{ fontFamily: "var(--font-poppins), sans-serif" }}
-          >
-            Clients That <span className="text-[#59DFAB]">Worked with Us</span>
-          </h2>
-
-          <div className="flex justify-center">
-            <Image
-              src="/shopify-services/clients-strip.png"
-              alt="Client logos"
-              width={1400}
-              height={80}
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </section>
+      <ClientsWorkedWithUs />
 
       {/* ── How Does It Work ── */}
       <section className="bg-white py-16">
