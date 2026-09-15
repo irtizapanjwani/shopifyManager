@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import EssentialFeatures from "@/components/EssentialFeatures";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
+import { siteConfig } from "@/config/site";
+
+export const metadata: Metadata = {
+  title: `Shopify Services | ${siteConfig.name}`,
+  description: "Explore our comprehensive Shopify services including store design, development, migration, speed optimization, and e-commerce marketing.",
+};
 
 export default function ServicesPage() {
   return (

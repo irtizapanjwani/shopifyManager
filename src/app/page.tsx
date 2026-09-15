@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 import HeroSection from "@/components/HeroSection";
 import ExpandReach from "@/components/ExpandReach";
 import SellAnything from "@/components/SellAnything";
@@ -11,6 +13,11 @@ import PricingSection from "@/components/PricingSection";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTABanner from "@/components/CTABanner";
+
+export const metadata: Metadata = {
+  title: siteConfig.name,
+  description: siteConfig.description,
+};
 
 export default function Home() {
   return (
