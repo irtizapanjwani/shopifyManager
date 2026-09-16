@@ -107,15 +107,28 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-[#195f35] border-t border-white/15 px-4 pb-6 pt-4 space-y-1">
           <div>
-            <button
-              className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-semibold text-white hover:bg-[#162a20] hover:text-[#9bc43f] transition-colors"
-              onClick={() => setMobileServicesOpen((o) => !o)}
-            >
-              Services
-              <svg className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
-              </svg>
-            </button>
+            <div className="flex items-center rounded-lg hover:bg-[#162a20] transition-colors">
+              <Link
+                href="/services"
+                className={`flex-1 px-4 py-3 text-sm font-semibold transition-colors ${
+                  pathname === "/services"
+                    ? "text-[#59DFAB]"
+                    : "text-white hover:text-[#9bc43f]"
+                }`}
+                onClick={() => { setMobileOpen(false); setMobileServicesOpen(false); }}
+              >
+                Services
+              </Link>
+              <button
+                className="px-3 py-3 text-white hover:text-[#9bc43f] transition-colors"
+                onClick={() => setMobileServicesOpen((o) => !o)}
+                aria-label={mobileServicesOpen ? "Close services menu" : "Open services menu"}
+              >
+                <svg className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+                </svg>
+              </button>
+            </div>
             {mobileServicesOpen && (
               <div className="pl-4 space-y-1">
                 {serviceLinks.map((svc) => (
