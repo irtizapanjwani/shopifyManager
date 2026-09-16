@@ -161,16 +161,16 @@ function PackageDetailsContent() {
       {/* Package Content */}
       <section className="bg-white py-16">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-8 items-start">
+          <div className="flex flex-col md:flex-row gap-8 items-stretch">
             {/* Left: Plan Info */}
-            <div className="flex-1 bg-[#58DDB0] rounded-2xl p-8 text-white">
+            <div className="flex-1 bg-[#58DDB0] rounded-2xl p-8 text-white flex flex-col">
               <h2 className="text-2xl font-bold mb-2">{plan.name}</h2>
               <p className="text-sm mb-4 text-white/90">{plan.description}</p>
               <div className="flex items-baseline gap-3 mb-6">
                 <span className="text-4xl font-bold">{plan.price}</span>
                 <span className="text-xl line-through text-white/60">{plan.originalPrice}</span>
               </div>
-              <div className="flex gap-3">
+              <div className="flex gap-3 mt-auto">
                 <button
                   onClick={() => setModalOpen(true)}
                   className="flex-1 py-3 rounded-full border-2 border-white bg-transparent text-white font-bold text-sm hover:bg-white hover:text-[#58DDB0] transition-colors"
@@ -192,8 +192,9 @@ function PackageDetailsContent() {
             </div>
 
             {/* Right: Features */}
-            <div className="flex-1 bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
-              <ul className="space-y-4">
+            <div className="flex-1 bg-white border border-gray-200 rounded-2xl p-8 shadow-sm flex flex-col">
+              <h3 className="text-lg font-bold text-slate-800 mb-4">What&apos;s Included</h3>
+              <ul className="space-y-3 text-sm h-[200px] overflow-y-auto pr-3 pricing-scrollbar-light">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3 text-gray-800">
                     <span className="w-2 h-2 bg-gray-800 rounded-full flex-shrink-0"></span>
