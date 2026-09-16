@@ -39,7 +39,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Clients That Worked with Us ── */}
-      <ClientsWorkedWithUs />
+      <ClientsWorkedWithUs singleRow largeLogos />
 
       {/* ── How Shopify Managers Came into Existence ── */}
       <section className="bg-white pb-20">

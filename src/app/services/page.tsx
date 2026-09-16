@@ -59,11 +59,23 @@ export default function ServicesPage() {
               </Link>
             </div>
           </div>
+
+          {/* Right Image */}
+          <div className="absolute right-[40px] top-[100px] z-10 hidden md:flex justify-center pt-20">
+            <Image
+              src="/shopify-donefor/1.png"
+              alt="Shopify Services illustration"
+              width={2500}
+              height={2500}
+              className="w-full max-w-[900px] max-h-[550px] h-auto"
+            />
+          </div>
+
         </div>
       </section>
 
       {/* ── Clients That Worked with Us ── */}
-      <ClientsWorkedWithUs />
+      <ClientsWorkedWithUs singleRow largeLogos />
 
       {/* ── Shopify Store Development ── */}
       <section className="bg-white px-6 pt-20 pb-8 sm:pt-28 sm:pb-8">
