@@ -242,9 +242,12 @@ function Card({ plan }: { plan: typeof dropshippingPlans[0] }) {
 
       {/* Bottom Buttons */}
       <div className="px-5 pt-3 pb-3 flex gap-3">
-        <button className="flex-1 py-3 rounded-lg bg-[#95BF47] text-white text-[15px] font-semibold hover:bg-[#85b336] transition-colors duration-300 cursor-pointer">
+        <Link
+          href="/contact"
+          className="flex-1 py-3 rounded-lg bg-[#95BF47] text-white text-[15px] font-semibold hover:bg-[#85b336] transition-colors duration-300 cursor-pointer text-center"
+        >
           Get Started
-        </button>
+        </Link>
         <button
           onClick={() => openZohoDeskChat()}
           className="flex-1 py-3 rounded-lg border border-slate-300 text-[#374151] text-[15px] font-semibold hover:border-[#95BF47] hover:text-[#95BF47] transition-colors duration-300 cursor-pointer"
