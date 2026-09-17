@@ -85,7 +85,7 @@ export default function ProcessPage() {
       </section>
 
       {/* ── Clients That Worked with Us ── */}
-      <ClientsWorkedWithUs />
+      <ClientsWorkedWithUs singleRow largeLogos />
 
       {/* ── How Does It Work ── */}
       <section className="bg-white py-16">
